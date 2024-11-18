@@ -24,7 +24,6 @@ import { countries } from "../../Helpers/Constant"
   return (
     <div className="min-h-screen relative mx-auto ">
       <div className="bg-overlay lg:hidden absolute  w-full h-full "></div>
-     
         <div className="grid  grid-cols-2 h-full ">
           <div className="col-span-1 p-3 h-full lg:block hidden ">
             <div className="card auth-img-card relative">

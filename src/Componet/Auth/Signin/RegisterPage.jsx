@@ -73,14 +73,12 @@ function RegisterPage() {
                 <div className="card mb-0   ">
                   <div className="w-full mx-auto ">
                     <div className=" col-span-2  justify-center h-full  full-div">
-                      <div className="    h-full sm:p-2 overflow-hidden  lg:mx-auto   ">
-                        <div className=" overflow-y-hidden  w-[95%] sm:w-[70%] lg:w-full h-full mx-auto  xl:w-[70%] bg-white rounded-xl sm:py-4 sm:px-4 py-4 px-4 ">
-                
+                      <div className="h-full sm:p-2 overflow-hidden  lg:mx-auto   ">
+                        <div className="overflow-y-hidden  w-[95%] sm:w-[70%] lg:w-full h-full mx-auto  xl:w-[70%] bg-white rounded-xl sm:py-4 sm:px-4 py-4 px-4">
                           <div className="flex justify-end  text-gray p-2">
                             <div
                               className="bg-white rounded cursor-pointer flex items-center justify-end bg-transparent "
-                              onClick={() => setDropdownOpen(!dropdownOpen)}
-                            >
+                              onClick={() => setDropdownOpen(!dropdownOpen)}>
                               <img
                                 src={selectedCountry.flag}
                                 alt={selectedCountry.name}

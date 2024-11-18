@@ -9,7 +9,7 @@ function SidebarItem({ label, path, icon, isActive }) {
           isActive
             ? "text-white bg-sky  hover:bg-sky hover:text-white"
             : "text-gray-400"
-        } flex items-center px-4 py-4 mt-2 rounded-lg hover:bg-whiteSky group   text-gray cursor-pointer`}
+        } flex items-center px-4 py-3 mt-2 rounded-lg hover:bg-whiteSky group   text-gray cursor-pointer`}
       >
         <Link to={path} className="flex items-center w-full">
           <span  className={` ${

@@ -11,7 +11,7 @@ import Treatment from './imges/Svg File/Treatment';
 import InspectionRequest from './Componet/Pages/InspectionRequest';
 import EmergencyPatient from './Componet/Pages/EmergencyPatient';
 import RunningTreatment from './Componet/Pages/RunningTreatment';
-import Layout from './Componet/Layout/Layout';
+
 import PatientsList from './Componet/Pages/patients/PatientsList';
 import PatientDetails from './Componet/Pages/patients/PatientDetails';
 
@@ -35,7 +35,7 @@ function App() {
         <Route path="/InspectionRequest" element={<InspectionRequest />} />
         <Route path="/EmergencyPatient" element={<EmergencyPatient />} />
 
-        <Route path="/layout" element={<Layout />} />
+       
       </Routes>
     </>
   );

@@ -19,3 +19,5 @@ export { default as Femaleicon } from "./Femaleicon";
 export { default as PatientProfile} from "./PatientProfile";
 export { default as Emailicon} from "./Emailicon";
 export { default as Editicon} from "./Editicon";
+export { default as Dateicon} from "./Dateicon"
+export { default as Eyeicon} from "./Eyeicon"

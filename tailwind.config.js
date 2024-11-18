@@ -26,6 +26,9 @@ module.exports = {
         offred:"#FFF1F1",
         borderwhite:"#EFEFEF",
         bgwrape:"#abacad",
+        orange:"#FF8a00",
+        offorange:"#FFF6eb",
+        grayline:"#E7E8EB",
       },
       fontSize: {
         sm: ["14px", "20px"],

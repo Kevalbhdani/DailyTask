@@ -10,8 +10,10 @@ import BdayIcon from "../../../imges/Svg File/BdayIcon";
 import Trash from "../../../imges/Svg File/Trash";
 import Editicon from "../../../imges/Svg File/Editicon";
 import Mapicon from "../../../imges/Svg File/Mapicon";
+import { Link } from "react-router-dom";
+import Dateicon from "../../../imges/Svg File/Dateicon";
 
-function PatientDetails({gender, age }) {
+function PatientDetails({ gender, age }) {
   const { id } = useParams();
 
   const crumbs = [
@@ -112,6 +114,308 @@ function PatientDetails({gender, age }) {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="flex justify-between iteam-center pt-5 col-span-12">
+          <div className="Title py-2">
+            <h1 className="font-nunitoSans font-bold text-2xl ">Treatment</h1>
+          </div>
+          <div className="Add Treatment">
+            <button className="px-4 py-3 text-white bg-sky rounded-2xl">
+              <span className="  font-nunitoSans font-bold text-base text-md">
+                + Add Treatment
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-8 md:gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-3 xl:grid-cols-3">
+          <div className="Treatment-box-1">
+            <Link to={``}>
+              <div className={"flex bg-white shadow-sm rounded-xl"}>
+                <div className={"w-[140px] h-[140px]"}>
+                  <img
+                    className="rounded-l-xl h-full   object-cover"
+                    src={require("../../../imges/user.webp")}
+                    alt="User"
+                  />
+                </div>
+                <div className=" p-2 md:p-4 lg:p-6 ">
+                  <h6 className="font-semibold font-nunitoSans text-base text-black mb-2">
+                    Completion 35,36,
+                  </h6>
+                  <div className="text-base font-normal">
+                    <div className="bg-orange-100 text-orange bg-offorange inline-block px-4 rounded-full h-8 mb-2">
+                      <span>Runnning</span>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      "font-nunitoSans font-normal text-sm flex items-center "
+                    }
+                  >
+                    <Dateicon> </Dateicon>
+                    <h3 className="ms-2">02 Sep, 2024</h3>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="Treatment-box-2">
+            <Link to={``}>
+              <div className={"flex bg-white shadow-sm rounded-xl"}>
+                <div className={"w-[140px] h-[140px]"}>
+                  <img
+                    className="rounded-l-xl h-full   object-cover"
+                    src={require("../../../imges/user.webp")}
+                    alt="User"
+                  />
+                </div>
+                <div className=" p-2 md:p-4 lg:p-6 ">
+                  <h6 className="font-semibold font-nunitoSans text-base text-black mb-2">
+                    Completion 35,36,
+                  </h6>
+                  <div className="text-base font-normal">
+                    <div className="bg-orange-100 text-orange bg-offorange inline-block px-4 rounded-full h-8 mb-2">
+                      <span>Runnning</span>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      "font-nunitoSans font-normal text-sm flex items-center "
+                    }
+                  >
+                    <Dateicon> </Dateicon>
+                    <h3 className="ms-2">02 Sep, 2024</h3>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="Treatment-box-3">
+            <Link to={``}>
+              <div className={"flex bg-white shadow-sm rounded-xl"}>
+                <div className={"w-[140px] h-[140px]"}>
+                  <img
+                    className="rounded-l-xl h-full   object-cover"
+                    src={require("../../../imges/user.webp")}
+                    alt="User"
+                  />
+                </div>
+                <div className=" p-2 md:p-4 lg:p-6 ">
+                  <h6 className="font-semibold font-nunitoSans text-base text-black mb-2">
+                    Completion 35,36,
+                  </h6>
+                  <div className="text-base font-normal">
+                    <div className="bg-orange-100 text-orange bg-offorange inline-block px-4 rounded-full h-8 mb-2">
+                      <span>Runnning</span>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      "font-nunitoSans font-normal text-sm flex items-center "
+                    }
+                  >
+                    <Dateicon> </Dateicon>
+                    <h3 className="ms-2">02 Sep, 2024</h3>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="Treatment-box-4">
+            <Link to={``}>
+              <div className={"flex bg-white shadow-sm rounded-xl"}>
+                <div className={"w-[140px] h-[140px]"}>
+                  <img
+                    className="rounded-l-xl h-full   object-cover"
+                    src={require("../../../imges/user.webp")}
+                    alt="User"
+                  />
+                </div>
+                <div className=" p-2 md:p-4 lg:p-6 ">
+                  <h6 className="font-semibold font-nunitoSans text-base text-black mb-2">
+                    Completion 35,36,
+                  </h6>
+                  <div className="text-base font-normal">
+                    <div className="bg-orange-100 text-orange bg-offorange inline-block px-4 rounded-full h-8 mb-2">
+                      <span>Runnning</span>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      "font-nunitoSans font-normal text-sm flex items-center "
+                    }
+                  >
+                    <Dateicon> </Dateicon>
+                    <h3 className="ms-2">02 Sep, 2024</h3>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="Treatment-box-5">
+            <Link to={``}>
+              <div className={"flex bg-white shadow-sm rounded-xl"}>
+                <div className={"w-[140px] h-[140px]"}>
+                  <img
+                    className="rounded-l-xl h-full   object-cover"
+                    src={require("../../../imges/user.webp")}
+                    alt="User"
+                  />
+                </div>
+                <div className=" p-2 md:p-4 lg:p-6 ">
+                  <h6 className="font-semibold font-nunitoSans text-base text-black mb-2">
+                    Completion 35,36,
+                  </h6>
+                  <div className="text-base font-normal">
+                    <div className="bg-orange-100 text-orange bg-offorange inline-block px-4 rounded-full h-8 mb-2">
+                      <span>Runnning</span>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      "font-nunitoSans font-normal text-sm flex items-center "
+                    }
+                  >
+                    <Dateicon> </Dateicon>
+                    <h3 className="ms-2">02 Sep, 2024</h3>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="Treatment-box-6">
+            <Link to={``}>
+              <div className={"flex bg-white shadow-sm rounded-xl"}>
+                <div className={"w-[140px] h-[140px]"}>
+                  <img
+                    className="rounded-l-xl h-full   object-cover"
+                    src={require("../../../imges/user.webp")}
+                    alt="User"
+                  />
+                </div>
+                <div className=" p-2 md:p-4 lg:p-6 ">
+                  <h6 className="font-semibold font-nunitoSans text-base text-black mb-2">
+                    Completion 35,36,
+                  </h6>
+                  <div className="text-base font-normal">
+                    <div className="bg-orange-100 text-orange bg-offorange inline-block px-4 rounded-full h-8 mb-2">
+                      <span>Runnning</span>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      "font-nunitoSans font-normal text-sm flex items-center "
+                    }
+                  >
+                    <Dateicon> </Dateicon>
+                    <h3 className="ms-2">02 Sep, 2024</h3>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="Treatment-box-7">
+            <Link to={``}>
+              <div className={"flex bg-white shadow-sm rounded-xl"}>
+                <div className={"w-[140px] h-[140px]"}>
+                  <img
+                    className="rounded-l-xl h-full   object-cover"
+                    src={require("../../../imges/user.webp")}
+                    alt="User"
+                  />
+                </div>
+                <div className=" p-2 md:p-4 lg:p-6 ">
+                  <h6 className="font-semibold font-nunitoSans text-base text-black mb-2">
+                    Completion 35,36,
+                  </h6>
+                  <div className="text-base font-normal">
+                    <div className="bg-orange-100 text-orange bg-offorange inline-block px-4 rounded-full h-8 mb-2">
+                      <span>Runnning</span>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      "font-nunitoSans font-normal text-sm flex items-center "
+                    }
+                  >
+                    <Dateicon> </Dateicon>
+                    <h3 className="ms-2">02 Sep, 2024</h3>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="Treatment-box-8">
+            <Link to={``}>
+              <div className={"flex bg-white shadow-sm rounded-xl"}>
+                <div className={"w-[140px] h-[140px]"}>
+                  <img
+                    className="rounded-l-xl h-full   object-cover"
+                    src={require("../../../imges/user.webp")}
+                    alt="User"
+                  />
+                </div>
+                <div className=" p-2 md:p-4 lg:p-6 ">
+                  <h6 className="font-semibold font-nunitoSans text-base text-black mb-2">
+                    Completion 35,36,
+                  </h6>
+                  <div className="text-base font-normal">
+                    <div className="bg-orange-100 text-orange bg-offorange inline-block px-4 rounded-full h-8 mb-2">
+                      <span>Runnning</span>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      "font-nunitoSans font-normal text-sm flex items-center "
+                    }
+                  >
+                    <Dateicon> </Dateicon>
+                    <h3 className="ms-2">02 Sep, 2024</h3>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="Treatment-box-9">
+            <Link to={``}>
+              <div className={"flex bg-white shadow-sm rounded-xl"}>
+                <div className={"w-[140px] h-[140px]"}>
+                  <img
+                    className="rounded-l-xl h-full   object-cover"
+                    src={require("../../../imges/user.webp")}
+                    alt="User"
+                  />
+                </div>
+                <div className=" p-2 md:p-4 lg:p-6 ">
+                  <h6 className="font-semibold font-nunitoSans text-base text-black mb-2">
+                    Completion 35,36,
+                  </h6>
+                  <div className="text-base font-normal">
+                    <div className="bg-orange-100 text-orange bg-offorange inline-block px-4 rounded-full h-8 mb-2">
+                      <span>Runnning</span>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      "font-nunitoSans font-normal text-sm flex items-center "
+                    }
+                  >
+                    <Dateicon> </Dateicon>
+                    <h3 className="ms-2">02 Sep, 2024</h3>
+                  </div>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

@@ -11,6 +11,14 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
+
+.borderline{
+  border-bottom: 1px solid #E7E8EB;
+}
+
+.bordertop{
+  border-top: 1px solid #E7E8EB;
+}
 .auth-img-card {
   @apply sticky top-[8px];
   height: calc(100vh - 24px);
@@ -104,7 +112,7 @@ aside.AddClass {
     transition: 0.3s ease-in-out !important;
     background-color: white;
     border: none;
-    box-shadow: 0px 4px 20px 0px #0000000a;
+    box-shadow: 0px 4px 20px 0px #0000000a !important;
   }
 
   .AddClass .bg-overlap {
@@ -122,6 +130,16 @@ aside.AddClass {
   }
 }
 
+.profile-offcanvas {
+  width: 450px !important;
+  transition: 0.5s ease-in-out !important;
+}
+
+.profile-offcanvas-off {
+  width: 0px !important;
+  transition: 0.5s ease-in-out !important;
+}
+
 /* ## switch ## */
 
 .switch {
@@ -131,7 +149,7 @@ aside.AddClass {
   height: 34px;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -145,8 +163,8 @@ aside.AddClass {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -157,22 +175,22 @@ aside.AddClass {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px)!important;
-  -ms-transform: translateX(26px)!important;
-  transform: translateX(26px)!important;
+  -webkit-transform: translateX(26px) !important;
+  -ms-transform: translateX(26px) !important;
+  transform: translateX(26px) !important;
 }
 
 /* Rounded sliders */
@@ -204,15 +222,14 @@ input:checked + .slider:before {
 } */
 
 ::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
-.checked-text .male{
-  background-color: #1479FF;
-  color: white;
-}
-.checked-text .female{
+.checked-text .male {
   background-color: #1479ff;
   color: white;
 }
-
+.checked-text .female {
+  background-color: #1479ff;
+  color: white;
+}

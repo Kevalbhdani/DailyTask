@@ -24,7 +24,7 @@ function PatientsList() {
             key={patient.id}
             className="bg-white shadow-sm rounded-2xl p-4 flex flex-col"
           >
-            <div className=" lg:pb-4 md:pb-2 pb-2 flex flex-row items-center gap-3 border-b border-gray">
+            <div className=" lg:pb-4 md:pb-2 pb-2 flex flex-row items-center gap-3 borderline">
               <div className="flex items-center ">
                 <img
                   src={patient.avatarUrl}

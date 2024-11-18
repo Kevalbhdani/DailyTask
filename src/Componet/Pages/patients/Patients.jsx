@@ -42,7 +42,6 @@ function Patients() {
   return (
     <DashboardView>
       <div className="flex flex-row justify-between items-center w-full ">
-        {/* flex-col justify-start md:flex-row md:justify-between md:items-center */}
         <div className="Title py-2">
           <h1 className="font-AlbertSans font-bold text-2xl ">Patients</h1>
           <Breadcrumb crumbs={crumbs}></Breadcrumb>
