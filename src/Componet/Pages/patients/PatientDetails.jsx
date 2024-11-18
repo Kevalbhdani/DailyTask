@@ -420,6 +420,7 @@ function PatientDetails({ gender, age }) {
         </div>
       </div>
     </DashboardView>
+    
   );
 }
 
