@@ -6,15 +6,12 @@ import BdayIcon from "../../../imges/Svg File/BdayIcon";
 import { Link } from "react-router-dom";
 import { Pagination } from "../../Helpers/Pagination";
 import { useState } from "react";
-;
-
 function PatientsList() {
   // const [isOn, setIsOn] = useState(false);
   // const toggleSwitch = () => {
   //   setIsOn(!isOn);
   // };
 
- 
   return (
     <div className=" bg-gray-100  ">
       <div className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 lg:gap-4 md:gap-4 sm:gap-2 mx-auto ">
@@ -76,15 +73,14 @@ function PatientsList() {
                   Status
                 </h6>
                 <div className="ms-auto">
-                  <label className="relative flex items-center justify-end border rounded-full  cursor-pointer ">
-                    <input type="checkbox" className="sr-only peer" />
-                    <div
-                      className="w-8 h-4 bg-gray-200  peer-focus:ring-2 rounded-full
-                           peer-checked:bg-gray peer-checked:after:translate-x-full peer-checked:after:border-white
-                             after:absolute after:top-0.5 after:left-[4px]  after:bg-white after:border-gray-300 after:border
-                             after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600"
-                    ></div>
+                  <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" class="sr-only peer" value="" />
+                    <div class="group peer bg-gray  rounded-full duration-300 w-8 h-4   after:duration-300 after:bg-white peer-checked:after:bg-sky peer-checked:ring-sky peer-checked:ring-2 after:rounded-full after:absolute after:h-2.5 after:w-2.5 after:top-[3px] after:right-1 after:flex after:justify-center after:items-center peer-checked:after:-translate-x-4 peer-hover:after:scale-95"></div>
                   </label>
+                  {/* <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" class="sr-only peer" value="" />
+                    <div class="group peer bg-white rounded-full duration-300 w-16 h-8 ring-2 ring-red-500 after:duration-300 after:bg-red-500 peer-checked:after:bg-green-500 peer-checked:ring-green-500 after:rounded-full after:absolute after:h-6 after:w-6 after:top-1 after:left-1 after:flex after:justify-center after:items-center peer-checked:after:translate-x-8 peer-hover:after:scale-95"></div>
+                  </label> */}
                 </div>
               </div>
             </div>

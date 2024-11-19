@@ -1,6 +1,6 @@
 import React, { Profiler, useEffect, useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
-import { PiKey, PiLineVerticalThin } from "react-icons/pi";
+import { PiLineVerticalThin } from "react-icons/pi";
 import { IoMenu } from "react-icons/io5";
 import { notifications } from "../Helpers/Constant";
 import { IoCloseSharp } from "react-icons/io5"; // For the close button
@@ -11,10 +11,14 @@ import Treatment from "../../imges/Svg File/Treatment";
 import Emergncy from "../../imges/Svg File/Emergncy";
 import { Link, useLocation } from "react-router-dom";
 import SidebarItem from "./SidebarItem";
-import { Cancelicon, EditProfileIcon, NotificationIcon, SetingIcon,} from "../../imges/Svg File/Index";
+import {
+  Cancelicon,
+  EditProfileIcon,
+  NotificationIcon,
+  SetingIcon,
+} from "../../imges/Svg File/Index";
 import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
 import Drawer from "react-modern-drawer";
-
 function DashboardView({ children }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
@@ -24,63 +28,51 @@ function DashboardView({ children }) {
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
   const [active, setactive] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const  [isdiv, setisdiv] = useState(false)
+  const [isdiv, setisdiv] = useState(false);
   const { pathname } = useLocation();
   console.log("path", pathname);
-
   // ### countries flg ###
   const toggleCountryDropdown = () => {
     setIsCountryDropdownOpen(!isCountryDropdownOpen);
     setIsNotificationDropdownOpen(false); // Close the other dropdown if it's open
   };
-
   const toggleNotificationDropdown = () => {
     setIsNotificationDropdownOpen(!isNotificationDropdownOpen);
     setIsCountryDropdownOpen(false); // Close the other dropdown if it's open
   };
-
   const handleCountrySelect = (country) => {
     setSelectedCountry(country);
     setIsCountryDropdownOpen(false);
   };
-
   // ## sidebar open /close ##
   const Class = () => {
     setactive(!active);
   };
-
   // #searchbar
   const toggleSearchBar = () => setIsSearchOpen(!isSearchOpen);
-
   // ### profile models
   const openModal = () => {
     setIsOpen(true);
   };
-
   const closeModal = () => {
     console.log("Closing modal");
     setIsOpen(false);
     console.log("isOpen after close:", isOpen);
   };
-
-  const profileOffcanvas =()=>{
-        setIsOpen(!isOpen)
-  }
-  
-
-
-
+  const profileOffcanvas = () => {
+    setIsOpen(!isOpen);
+  };
   return (
-    <div className="flex ">
+    <div className="flex  ">
       {/* Sidebar */}
       <aside
         width="250px"
-        className={` min-h-screen  bg-white shadow z-[980] ${
+        className={` min-h-screen  bg-white shadow z-[980] bg-overlap ${
           active ? "AddClass" : ""
         }`}
       >
         <div
-          className={`ps-sidebar-container flex flex-col  justify-between min-h-screen w-[250px] sticky top-0 left-0 overflow-hidden`}
+          className={`ps-sidebar-container flex flex-col  justify-between min-h-screen w-[250px] sticky top-0 left-0 overflow-hidden `}
         >
           <div className="Upper-sidebar relative h-full overflow-y-auto overflow-x-hidden z-3">
             <div className="logo-images" onClick={() => setisdiv(!isdiv)}>
@@ -184,16 +176,14 @@ function DashboardView({ children }) {
           </div>
         </div>
       </aside>
-
       {/* Header and Main Content */}
-      <div className={`sidebar-layout  w-full bg-offwhite  `}>
+      <div className={`sidebar-layout  w-full bg-offwhite bg-overlap `}>
         <header className=" header  shadow-md space-x-4  sticky top-0 right-0 px-4 p-4 w-full  bg-white z-[9] ">
           <div className="flex items-center w-full relative  ">
             <div className={`flex items-center rounded-lg  w-full`}>
               <button className={`sidebar serch-box `} onClick={Class}>
                 <IoMenu className={` w-8 h-8  m-2 text-gray lg:hidden `} />
               </button>
-
               <div className=" flex items-center bg-grayLight rounded-lg ">
                 <button
                   className="flex items-center  serch-box"
@@ -205,7 +195,6 @@ function DashboardView({ children }) {
                     placeholder="Search"
                     className="px-1 py-2 text-md rounded-md font-nunitoSans font-normal  bg-grayLight focus:outline-none hidden lg:inline-block serch-box"
                   />
-
                   <div
                     className={`absolute sm:top-16 top-20 lg:hidden right-10 w-[full]  sm:p-4 p-2 bg-white rounded-lg shadow-lg transition-all duration-300 ${
                       isSearchOpen
@@ -222,7 +211,6 @@ function DashboardView({ children }) {
                 </button>
               </div>
             </div>
-
             <div className="flex items-center ms-auto  ">
               <div className=" flex items-center">
                 <button onClick={toggleSearchBar}>
@@ -277,11 +265,10 @@ function DashboardView({ children }) {
                   </div>
                 )}
               </div>
-
               <button
-                className={` px-2  ${
-                  isOpen ? "profile-offcanvas" : "profile-offcanvas-off"
-                } `}
+                // className={` px-2  ${
+                //   isOpen ? "profile-offcanvas" : "profile-offcanvas-off"
+                // } `}
                 onClick={profileOffcanvas}
               >
                 {/* onClick={openModal} */}
@@ -293,10 +280,7 @@ function DashboardView({ children }) {
                       alt="User"
                     />
                   </div>
-                  <div
-                    className="ml-2  hidden sm:inline-block overflow-hidden"
-                    // onClick={Class}
-                  >
+                  <div className="ml-2  hidden sm:inline-block overflow-hidden">
                     <p className="font-nunitoSans font-medium	text-sm ">
                       User Name
                     </p>
@@ -305,160 +289,160 @@ function DashboardView({ children }) {
                     </p>
                   </div>
                 </div>
-                {/* <div>
-                  {isOpen && (
-                    <div className="fixed  inset-0 right-0 top-0  flex justify-end  bg-black bg-opacity-50 z-[999]  ">
-                      <div
-                        className="bg-white  rounded-l-3xl shadow-lg w-[450px] relative overflow-auto xl:overflow-y-hidden z-[999] "
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <div
-                          className="profile-header lg:p-6 md:p-4 sm:p-3 p-3 justify-between flex items-center sticky top-0 right-0 z-10 bg-white
-                        "
-                        >
-                          <div className="title-section">
-                            <h2 className="text-2xl font-bold  font-nunitoSans text-start">
-                              Edit Profile
-                            </h2>
-                            <p className="font-base font-nunitoSans font-light text-gray mt-1">
-                              Add patient all details
-                            </p>
-                          </div>
-                          <div>
-                            <button
-                              className=" text-gray-400 hover:text-gray-600"
-                              onClick={closeModal}
-                            >
-                              <Cancelicon></Cancelicon>
-                            </button>
-                          </div>
-                        </div>
-                        <div className="profile-body h-full p-0">
-                          <div className=" ">
-                            <form action="">
-                              <div className="flex flex-col content-between">
-                                <div className="lg:p-5 md:p-4 sm:p-3 p-3 mb-5 text-start">
-                                  <div className="text-center   ">
+                {/* 
+         <div>
+            {isOpen && (
+            <div className="fixed  inset-0 right-0 top-0  flex justify-end  bg-black bg-opacity-50 z-[999]  ">
+               <div
+                  className="bg-white  rounded-l-3xl shadow-lg w-[450px] relative overflow-auto xl:overflow-y-hidden z-[999] "
+                  onClick={(e) =>
+                  e.stopPropagation()}
+                  >
+                  <div
+                     className="profile-header lg:p-6 md:p-4 sm:p-3 p-3 justify-between flex items-center sticky top-0 right-0 z-10 bg-white
+                     "
+                     >
+                     <div className="title-section">
+                        <h2 className="text-2xl font-bold  font-nunitoSans text-start">
+                           Edit Profile
+                        </h2>
+                        <p className="font-base font-nunitoSans font-light text-gray mt-1">
+                           Add patient all details
+                        </p>
+                     </div>
+                     <div>
+                        <button
+                           className=" text-gray-400 hover:text-gray-600"
+                           onClick={closeModal}
+                           >
+                           <Cancelicon></Cancelicon>
+                        </button>
+                     </div>
+                  </div>
+                  <div className="profile-body h-full p-0">
+                     <div className=" ">
+                        <form action="">
+                           <div className="flex flex-col content-between">
+                              <div className="lg:p-5 md:p-4 sm:p-3 p-3 mb-5 text-start">
+                                 <div className="text-center   ">
                                     <div className="upload-img   relative ">
-                                      <div className=" mx-auto img-preview w-[100px] h-[100px] p-2">
-                                        <img
-                                          className="  w-[full] h-[full]  rounded-full  object-cover "
-                                          src={require("../../imges/user.webp")}
-                                          alt="User"
-                                        />
-                                      </div>
-                                      <span className=" w-8 h-8 rounded-full border-4 border-white bg-sky absolute bottom-2 sm:right-[162px] md:right-[162px] right-[164px] lg:right-[158px]">
-                                        <input
+                                       <div className=" mx-auto img-preview w-[100px] h-[100px] p-2">
+                                          <img
+                                             className="  w-[full] h-[full]  rounded-full  object-cover "
+                                             src={require("../../imges/user.webp")}
+                                             alt="User"
+                                             />
+                                       </div>
+                                       <span className=" w-8 h-8 rounded-full border-4 border-white bg-sky absolute bottom-2 sm:right-[162px] md:right-[162px] right-[164px] lg:right-[158px]">
+                                       <input
                                           type="file"
                                           className=" p-1 w-5 h-5 rounded-full bg-sky "
-                                        />
-                                        <EditProfileIcon
-                                          className={`absolute   sm:top-[-1px] sm:left-[-6px] top-[-1px] left-[-6px] `}
-                                        ></EditProfileIcon>
-                                      </span>
+                                          />
+                                       <EditProfileIcon
+                                       className={`absolute   sm:top-[-1px] sm:left-[-6px] top-[-1px] left-[-6px] `}
+                                       ></EditProfileIcon>
+                                       </span>
                                     </div>
-                                  </div>
-                                  <div className="mb-4">
+                                 </div>
+                                 <div className="mb-4">
                                     <label
-                                      for="text"
-                                      className=" text-sm text-black mb-5 font-nunitoSans ms-1 font-normal "
-                                    >
-                                      Full Name
+                                       for="text"
+                                       className=" text-sm text-black mb-5 font-nunitoSans ms-1 font-normal "
+                                       >
+                                    Full Name
                                     </label>
                                     <div className=" relative mt-2 ">
-                                      <input
-                                        type="text"
-                                        placeholder=" EnterFull Name"
-                                        className="w-full px-11 py-3 bg-whiteLight rounded-xl text-sm "
-                                      />
-                                      <img
-                                        className="size-[20px] top-3 left-2 absolute"
-                                        src={require("../../imges/hospital.png")}
-                                        alt=""
-                                      />
+                                       <input
+                                          type="text"
+                                          placeholder=" EnterFull Name"
+                                          className="w-full px-11 py-3 bg-whiteLight rounded-xl text-sm "
+                                          />
+                                       <img
+                                          className="size-[20px] top-3 left-2 absolute"
+                                          src={require("../../imges/hospital.png")}
+                                          alt=""
+                                          />
                                     </div>
-                                  </div>
-
-                                  <div className="mb-4">
+                                 </div>
+                                 <div className="mb-4">
                                     <label
-                                      for="text"
-                                      className=" text-sm text-black mb-4 font-nunitoSans ms-1 font-normal "
-                                    >
-                                      Email
+                                       for="text"
+                                       className=" text-sm text-black mb-4 font-nunitoSans ms-1 font-normal "
+                                       >
+                                    Email
                                     </label>
                                     <div className=" relative mt-2 ">
-                                      <input
-                                        type="text"
-                                        placeholder="Enter Email "
-                                        className="w-full px-11 py-3 bg-whiteLight rounded-xl text-sm "
-                                      />
-                                      <img
-                                        className="size-[20px] top-3 left-2 absolute"
-                                        src={require("../../imges//email.png")}
-                                        alt=""
-                                      />
+                                       <input
+                                          type="text"
+                                          placeholder="Enter Email "
+                                          className="w-full px-11 py-3 bg-whiteLight rounded-xl text-sm "
+                                          />
+                                       <img
+                                          className="size-[20px] top-3 left-2 absolute"
+                                          src={require("../../imges//email.png")}
+                                          alt=""
+                                          />
                                     </div>
-                                  </div>
-
-                                  <div className="mb-4">
+                                 </div>
+                                 <div className="mb-4">
                                     <label
-                                      for="text"
-                                      className=" text-sm text-black mb-4 font-nunitoSans ms-1 font-normal "
-                                    >
-                                      Mobile Number
+                                       for="text"
+                                       className=" text-sm text-black mb-4 font-nunitoSans ms-1 font-normal "
+                                       >
+                                    Mobile Number
                                     </label>
                                     <div className=" relative mt-2">
-                                      <input
-                                        type="text"
-                                        placeholder=" Enter Mobile Number"
-                                        className="w-full px-10 py-3 bg-whiteLight rounded-xl text-sm "
-                                      />
-                                      <img
-                                        className="size-[20px] top-3 left-2 absolute"
-                                        src={require("../../imges//call.png")}
-                                        alt=""
-                                      />
+                                       <input
+                                          type="text"
+                                          placeholder=" Enter Mobile Number"
+                                          className="w-full px-10 py-3 bg-whiteLight rounded-xl text-sm "
+                                          />
+                                       <img
+                                          className="size-[20px] top-3 left-2 absolute"
+                                          src={require("../../imges//call.png")}
+                                          alt=""
+                                          />
                                     </div>
-                                  </div>
-
-                                  <div className="mb-4">
+                                 </div>
+                                 <div className="mb-4">
                                     <label
-                                      for="text"
-                                      className=" text-sm text-black mb-4 font-nunitoSans ms-1 font-normal "
-                                    >
-                                      Role
+                                       for="text"
+                                       className=" text-sm text-black mb-4 font-nunitoSans ms-1 font-normal "
+                                       >
+                                    Role
                                     </label>
                                     <div className="">
-                                      <select
-                                        id="lang"
-                                        className="w-full ps-2 pe-5 py-3 mt-2 text-sm  bg-whiteLight text-grayText rounded-xl  "
-                                      >
-                                        <option value="">
-                                          Hospital / Organisation-0
-                                        </option>
-                                        <option value="">
-                                          Hospital / Organisation-1
-                                        </option>
-                                        <option value="">
-                                          Hospital / Organisation-2
-                                        </option>
-                                      </select>
+                                       <select
+                                          id="lang"
+                                          className="w-full ps-2 pe-5 py-3 mt-2 text-sm  bg-whiteLight text-grayText rounded-xl  "
+                                          >
+                                          <option value="">
+                                             Hospital / Organisation-0
+                                          </option>
+                                          <option value="">
+                                             Hospital / Organisation-1
+                                          </option>
+                                          <option value="">
+                                             Hospital / Organisation-2
+                                          </option>
+                                       </select>
                                     </div>
-                                  </div>
-                                </div>
-                                <div className="pb-4 px-3 lg:px-5 md:px-4 sm:px-3 right-0 bottom-0 sticky bg-white ">
-                                  <button className="bg-blue-500 text-white w-full rounded-lg transition duration-300 py-3.5">
-                                    Save
-                                  </button>
-                                </div>
+                                 </div>
                               </div>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div> */}
+                              <div className="pb-4 px-3 lg:px-5 md:px-4 sm:px-3 right-0 bottom-0 sticky bg-white ">
+                                 <button className="bg-blue-500 text-white w-full rounded-lg transition duration-300 py-3.5">
+                                 Save
+                                 </button>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            )}
+         </div>
+         */}
               </button>
             </div>
           </div>
@@ -467,10 +451,16 @@ function DashboardView({ children }) {
           <div className="px-3 ">{children}</div>
         </main>
       </div>
-      {/* <div>
-        <div className="fixed  inset-0 right-0 top-0  flex justify-end bg-overlap z-[999]  ">
-          <div className="bg-white  rounded-l-3xl shadow-lg w-[0px] relative overflow-auto xl:overflow-y-hidden  profile-offcanvas">
-            <div className="profile-header lg:p-6 md:p-4 sm:p-3 p-3 justify-between flex items-center sticky top-0 right-0 z-10 bg-white">
+      {isOpen && (
+        <div className="fixed  inset-0 right-0 top-0  flex justify-end  bg-black bg-opacity-50 z-[999]  ">
+          <div
+            className="bg-white  rounded-l-3xl shadow-lg w-[450px] relative overflow-auto xl:overflow-y-hidden z-[999] "
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div
+              className="profile-header lg:p-6 md:p-4 sm:p-3 p-3 justify-between flex items-center sticky top-0 right-0 z-10 bg-white
+         "
+            >
               <div className="title-section">
                 <h2 className="text-2xl font-bold  font-nunitoSans text-start">
                   Edit Profile
@@ -480,133 +470,129 @@ function DashboardView({ children }) {
                 </p>
               </div>
               <div>
-                <button className=" text-gray-400 hover:text-gray-600 profile-offcanvas-off">
+                <button
+                  className=" text-gray-400 hover:text-gray-600"
+                  onClick={closeModal}
+                >
                   <Cancelicon></Cancelicon>
                 </button>
               </div>
             </div>
             <div className="profile-body h-full p-0">
-              <div className=" ">
-                <form action="">
-                  <div className="flex flex-col content-between">
-                    <div className="lg:p-5 md:p-4 sm:p-3 p-3 mb-5 text-start">
-                      <div className="text-center   ">
-                        <div className="upload-img   relative ">
-                          <div className=" mx-auto img-preview w-[100px] h-[100px] p-2">
-                            <img
-                              className="  w-[full] h-[full]  rounded-full  object-cover "
-                              src={require("../../imges/user.webp")}
-                              alt="User"
-                            />
-                          </div>
-                          <span className=" w-8 h-8 rounded-full border-4 border-white bg-sky absolute bottom-2 sm:right-[162px] md:right-[162px] right-[164px] lg:right-[158px]">
-                            <input
-                              type="file"
-                              className=" p-1 w-5 h-5 rounded-full bg-sky "
-                            />
-                            <EditProfileIcon
-                              className={`absolute   sm:top-[-1px] sm:left-[-6px] top-[-1px] left-[-6px] `}
-                            ></EditProfileIcon>
-                          </span>
-                        </div>
-                      </div>
-                      <div className="mb-4">
-                        <label
-                          for="text"
-                          className=" text-sm text-black mb-5 font-nunitoSans ms-1 font-normal "
-                        >
-                          Full Name
-                        </label>
-                        <div className=" relative mt-2 ">
-                          <input
-                            type="text"
-                            placeholder=" EnterFull Name"
-                            className="w-full px-11 py-3 bg-whiteLight rounded-xl text-sm "
-                          />
+              <form action="">
+                <div className="flex flex-col content-between">
+                  <div className="lg:p-5 md:p-4 sm:p-3 p-3 mb-5 text-start">
+                    <div className="text-center   ">
+                      <div className="upload-img   relative ">
+                        <div className=" mx-auto img-preview w-[100px] h-[100px] p-2">
                           <img
-                            className="size-[20px] top-3 left-2 absolute"
-                            src={require("../../imges/hospital.png")}
-                            alt=""
+                            className="  w-[full] h-[full]  rounded-full  object-cover "
+                            src={require("../../imges/user.webp")}
+                            alt="User"
                           />
                         </div>
-                      </div>
-
-                      <div className="mb-4">
-                        <label
-                          for="text"
-                          className=" text-sm text-black mb-4 font-nunitoSans ms-1 font-normal "
-                        >
-                          Email
-                        </label>
-                        <div className=" relative mt-2 ">
+                        <span className=" w-8 h-8 rounded-full border-4 border-white bg-sky absolute bottom-2 sm:right-[162px] md:right-[162px] right-[164px] lg:right-[158px]">
                           <input
-                            type="text"
-                            placeholder="Enter Email "
-                            className="w-full px-11 py-3 bg-whiteLight rounded-xl text-sm "
+                            type="file"
+                            className=" p-1 w-5 h-5 rounded-full bg-sky "
                           />
-                          <img
-                            className="size-[20px] top-3 left-2 absolute"
-                            src={require("../../imges//email.png")}
-                            alt=""
-                          />
-                        </div>
-                      </div>
-
-                      <div className="mb-4">
-                        <label
-                          for="text"
-                          className=" text-sm text-black mb-4 font-nunitoSans ms-1 font-normal "
-                        >
-                          Mobile Number
-                        </label>
-                        <div className=" relative mt-2">
-                          <input
-                            type="text"
-                            placeholder=" Enter Mobile Number"
-                            className="w-full px-10 py-3 bg-whiteLight rounded-xl text-sm "
-                          />
-                          <img
-                            className="size-[20px] top-3 left-2 absolute"
-                            src={require("../../imges//call.png")}
-                            alt=""
-                          />
-                        </div>
-                      </div>
-
-                      <div className="mb-4">
-                        <label
-                          for="text"
-                          className=" text-sm text-black mb-4 font-nunitoSans ms-1 font-normal "
-                        >
-                          Role
-                        </label>
-                        <div className="">
-                          <select
-                            id="lang"
-                            className="w-full ps-2 pe-5 py-3 mt-2 text-sm  bg-whiteLight text-grayText rounded-xl  "
-                          >
-                            <option value="">Hospital / Organisation-0</option>
-                            <option value="">Hospital / Organisation-1</option>
-                            <option value="">Hospital / Organisation-2</option>
-                          </select>
-                        </div>
+                          <EditProfileIcon
+                            className={`absolute   sm:top-[-1px] sm:left-[-6px] top-[-1px] left-[-6px] `}
+                          ></EditProfileIcon>
+                        </span>
                       </div>
                     </div>
-                    <div className="pb-4 px-3 lg:px-5 md:px-4 sm:px-3 right-0 bottom-0 sticky bg-white ">
-                      <button className="bg-blue-500 text-white w-full rounded-lg transition duration-300 py-3.5">
-                        Save
-                      </button>
+                    <div className="mb-4">
+                      <label
+                        for="text"
+                        className=" text-sm text-black mb-5 font-nunitoSans ms-1 font-normal "
+                      >
+                        Full Name
+                      </label>
+                      <div className=" relative mt-2 ">
+                        <input
+                          type="text"
+                          placeholder=" EnterFull Name"
+                          className="w-full px-11 py-3 bg-whiteLight rounded-xl text-sm "
+                        />
+                        <img
+                          className="size-[20px] top-3 left-2 absolute"
+                          src={require("../../imges/hospital.png")}
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div className="mb-4">
+                      <label
+                        for="text"
+                        className=" text-sm text-black mb-4 font-nunitoSans ms-1 font-normal "
+                      >
+                        Email
+                      </label>
+                      <div className=" relative mt-2 ">
+                        <input
+                          type="text"
+                          placeholder="Enter Email "
+                          className="w-full px-11 py-3 bg-whiteLight rounded-xl text-sm "
+                        />
+                        <img
+                          className="size-[20px] top-3 left-2 absolute"
+                          src={require("../../imges//email.png")}
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div className="mb-4">
+                      <label
+                        for="text"
+                        className=" text-sm text-black mb-4 font-nunitoSans ms-1 font-normal "
+                      >
+                        Mobile Number
+                      </label>
+                      <div className=" relative mt-2">
+                        <input
+                          type="text"
+                          placeholder=" Enter Mobile Number"
+                          className="w-full px-10 py-3 bg-whiteLight rounded-xl text-sm "
+                        />
+                        <img
+                          className="size-[20px] top-3 left-2 absolute"
+                          src={require("../../imges//call.png")}
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div className="mb-4">
+                      <label
+                        for="text"
+                        className=" text-sm text-black mb-4 font-nunitoSans ms-1 font-normal "
+                      >
+                        Role
+                      </label>
+                      <div className="">
+                        <select
+                          id="lang"
+                          className="w-full ps-2 pe-5 py-3 mt-2 text-sm  bg-whiteLight text-grayText rounded-xl  "
+                        >
+                          <option value="">Hospital / Organisation-0</option>
+                          <option value="">Hospital / Organisation-1</option>
+                          <option value="">Hospital / Organisation-2</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
-                </form>
-              </div>
+                  <div className="pb-4 px-3 lg:px-5 md:px-4 sm:px-3 right-0 bottom-0 sticky bg-white ">
+                    <button className="bg-blue-500 text-white w-full rounded-lg transition duration-300 py-3.5">
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
-      </div> */}
-      {/* <div className="bg-overlay z-[990]"></div> */}
+      )}
     </div>
   );
 }
-
 export default DashboardView;

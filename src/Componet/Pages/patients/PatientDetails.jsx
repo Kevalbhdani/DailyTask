@@ -36,7 +36,7 @@ function PatientDetails({ gender, age }) {
         <div className="grid-cols-12">
           <div className="patient-details flex items-center mt-3 bg-white shadow-sm rounded-2xl gap-3 p-4">
             <div className="gap-8 flex iteam-center ">
-              <div className="inner-pro pe-3 flex items-center flex-col">
+              <div className="inner-pro pe-3 flex items-center flex-col borderl">
                 <div className="  img-preview w-[100px] h-[100px] p-2">
                   <img
                     className="  w-[full] h-[full]  rounded-full  object-cover "
@@ -46,7 +46,7 @@ function PatientDetails({ gender, age }) {
                 </div>
                 <h3 className="font-nunitoSans font-bold text-base mt-3 text-black lg:text-center md:text-center">
                   Robert Smith
-                  <p>Patient ID: {id}</p>
+                  {/* <p>Patient ID: {id}</p> */}
                 </h3>
               </div>
               <div className="inner-details justify-start lg:items-center md:items-center pe-3 flex  flex-auto ">
@@ -117,7 +117,7 @@ function PatientDetails({ gender, age }) {
           </div>
         </div>
 
-        <div className="flex justify-between iteam-center pt-5 col-span-12">
+        <div className="flex justify-between iteam-center pt-4 col-span-12">
           <div className="Title py-2">
             <h1 className="font-nunitoSans font-bold text-2xl ">Treatment</h1>
           </div>
@@ -132,7 +132,7 @@ function PatientDetails({ gender, age }) {
 
         <div className="grid grid-cols-1 gap-8 md:gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-3 xl:grid-cols-3">
           <div className="Treatment-box-1">
-            <Link to={``}>
+            <Link to={`/TreatmentList`}>
               <div className={"flex bg-white shadow-sm rounded-xl"}>
                 <div className={"w-[140px] h-[140px]"}>
                   <img
@@ -420,7 +420,6 @@ function PatientDetails({ gender, age }) {
         </div>
       </div>
     </DashboardView>
-    
   );
 }
 

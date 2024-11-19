@@ -1,11 +1,14 @@
-import React from 'react'
-import DashboardView from '../Dashboard/DashboardView'
-import { ActiveTreatmenticon, InactiveTreatmenticon, TotalPatients, TotalTreatmenticon } from '../../imges/Svg File/Index'
-import TotalPatientsicon from '../../imges/Svg File/TotalPatientsicon'
-
+import React from "react";
+import DashboardView from "../Dashboard/DashboardView";
+import {
+  ActiveTreatmenticon,
+  InactiveTreatmenticon,
+  TotalPatients,
+  TotalTreatmenticon,
+} from "../../imges/Svg File/Index";
+import TotalPatientsicon from "../../imges/Svg File/TotalPatientsicon";
 
 function Dashboard() {
-  
   return (
     <DashboardView>
       <div class=" mx-auto bg-offwhite  ">
@@ -60,4 +63,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard
+export default Dashboard;

@@ -11,13 +11,12 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
-
-.borderline{
-  border-bottom: 1px solid #E7E8EB;
+.borderline {
+  border-bottom: 1px solid #e7e8eb;
 }
 
-.bordertop{
-  border-top: 1px solid #E7E8EB;
+.bordertop {
+  border-top: 1px solid #e7e8eb;
 }
 .auth-img-card {
   @apply sticky top-[8px];
@@ -88,6 +87,12 @@ aside.AddClass {
   transform: translateX(0); /* Show sidebar */
 }
 
+@media (max-width: 768px) {
+  .inner-details li {
+    margin: 8px 0px;
+  }
+}
+
 @media (max-width: 991px) {
   aside {
     position: fixed !important;
@@ -113,6 +118,7 @@ aside.AddClass {
     background-color: white;
     border: none;
     box-shadow: 0px 4px 20px 0px #0000000a !important;
+      /* background-color: rgb(0, 0, 0, 0.3) !important; */
   }
 
   .AddClass .bg-overlap {
@@ -121,7 +127,7 @@ aside.AddClass {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 1;
+    z-index: 8;
     background-color: rgb(0, 0, 0, 0.3) !important;
     width: 100%;
     height: 100%;
@@ -130,96 +136,7 @@ aside.AddClass {
   }
 }
 
-.profile-offcanvas {
-  width: 450px !important;
-  transition: 0.5s ease-in-out !important;
-}
-
-.profile-offcanvas-off {
-  width: 0px !important;
-  transition: 0.5s ease-in-out !important;
-}
-
 /* ## switch ## */
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #2196f3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px) !important;
-  -ms-transform: translateX(26px) !important;
-  transform: translateX(26px) !important;
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-/* ::-webkit-scrollbar  */
-
-/* ::-webkit-scrollbar {
-  width: 20px;
-} */
-
-/* ::-webkit-scrollbar-track {
-  background-color: yellowgreen;
-} */
-/* ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-  } */
-
-/* ::-webkit-scrollbar-thumb {
-  background: red; 
-  border-radius: 10%;
-} */
 
 ::-webkit-scrollbar {
   display: none;

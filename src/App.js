@@ -14,6 +14,7 @@ import RunningTreatment from './Componet/Pages/RunningTreatment';
 
 import PatientsList from './Componet/Pages/patients/PatientsList';
 import PatientDetails from './Componet/Pages/patients/PatientDetails';
+import TreatmentList from './Componet/Pages/patients/TreatmentList';
 
 
 
@@ -30,12 +31,11 @@ function App() {
         <Route path="/patients" element={<Patients />} />
         <Route path="/PatientsList" element={<PatientsList />} />
         <Route path="/PatientDetails/:id" element={<PatientDetails />} />
+        <Route path="/TreatmentList" element={<TreatmentList />} />
 
         <Route path="/Treatment" element={<RunningTreatment />} />
         <Route path="/InspectionRequest" element={<InspectionRequest />} />
         <Route path="/EmergencyPatient" element={<EmergencyPatient />} />
-
-       
       </Routes>
     </>
   );
