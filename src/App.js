@@ -15,6 +15,7 @@ import RunningTreatment from './Componet/Pages/RunningTreatment';
 import PatientsList from './Componet/Pages/patients/PatientsList';
 import PatientDetails from './Componet/Pages/patients/PatientDetails';
 import TreatmentList from './Componet/Pages/patients/TreatmentList';
+import Sidebar from './Componet/Sidebar/Sidebar';
 
 
 
@@ -36,6 +37,8 @@ function App() {
         <Route path="/Treatment" element={<RunningTreatment />} />
         <Route path="/InspectionRequest" element={<InspectionRequest />} />
         <Route path="/EmergencyPatient" element={<EmergencyPatient />} />
+
+        <Route path="/side" element={<Sidebar />} />
       </Routes>
     </>
   );

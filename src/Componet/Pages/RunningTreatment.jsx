@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DashboardView from "../Dashboard/DashboardView";
 import Breadcrumb from "../CommonComponet/Breadcrumb";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Eyeicon from "../../imges/Svg File/Eyeicon";
 import Dateicon from "../../imges/Svg File/Dateicon";
 import Cancelicon from "../../imges/Svg File/Cancelicon";
@@ -12,9 +12,11 @@ import Maleicon from "../../imges/Svg File/Maleicon";
 import Femaleicon from "../../imges/Svg File/Femaleicon";
 import BdayIcon from "../../imges/Svg File/BdayIcon";
 import Mapicon from "../../imges/Svg File/Mapicon";
+import { Runningdata } from "../Helpers/Constant";
 
 
 function RunningTreatment() {
+
    const [isOpen, setIsOpen] = useState(false);
    const [selectedGender, setSelectedGender] = useState("");
 
@@ -41,7 +43,7 @@ function RunningTreatment() {
   return (
     <DashboardView>
       <div>
-        <div className="flex justify-between items-center col-span-12">
+        <div className="flex flex-row justify-between items-center w-full">
           <div className="Title py-2">
             <h1 className="font-nunitoSans font-bold text-2xl ">
               Running Treatment
@@ -56,7 +58,9 @@ function RunningTreatment() {
             </button>
           </div>
         </div>
+
         <div className="grid grid-cols-1  sm:grid-cols-1 md:grid-cols-2 lg:grid-3 xl:grid-cols-3 gap-x-6 gap-y-2">
+          {/* {Runningdata.map((item) => { */}
           <div className="mt-3 p-3 bg-white shadow-sm rounded-xl">
             <Link to={`/PatientDetails`}>
               <div className="pb-4 gap-2 flex items-center flex-row borderline">
@@ -381,7 +385,9 @@ function RunningTreatment() {
               </div>
             </Link>
           </div>
+          {/* })} */}
         </div>
+
         {isOpen && (
           <div className="fixed  inset-0 right-0 top-0  flex justify-end  bg-black bg-opacity-50 z-[999]  ">
             <div

@@ -163,7 +163,7 @@ function PatientDetails({ gender, age }) {
             </Link>
           </div>
           <div className="Treatment-box-2">
-            <Link to={``}>
+            <Link to={`/TreatmentList`}>
               <div className={"flex bg-white shadow-sm rounded-xl"}>
                 <div className={"w-[140px] h-[140px]"}>
                   <img
@@ -195,7 +195,7 @@ function PatientDetails({ gender, age }) {
           </div>
 
           <div className="Treatment-box-3">
-            <Link to={``}>
+            <Link to={`/TreatmentList`}>
               <div className={"flex bg-white shadow-sm rounded-xl"}>
                 <div className={"w-[140px] h-[140px]"}>
                   <img
@@ -227,7 +227,7 @@ function PatientDetails({ gender, age }) {
           </div>
 
           <div className="Treatment-box-4">
-            <Link to={``}>
+            <Link to={`/TreatmentList`}>
               <div className={"flex bg-white shadow-sm rounded-xl"}>
                 <div className={"w-[140px] h-[140px]"}>
                   <img
@@ -259,7 +259,7 @@ function PatientDetails({ gender, age }) {
           </div>
 
           <div className="Treatment-box-5">
-            <Link to={``}>
+            <Link to={`/TreatmentList`}>
               <div className={"flex bg-white shadow-sm rounded-xl"}>
                 <div className={"w-[140px] h-[140px]"}>
                   <img
@@ -291,7 +291,7 @@ function PatientDetails({ gender, age }) {
           </div>
 
           <div className="Treatment-box-6">
-            <Link to={``}>
+            <Link to={`/TreatmentList`}>
               <div className={"flex bg-white shadow-sm rounded-xl"}>
                 <div className={"w-[140px] h-[140px]"}>
                   <img
@@ -323,7 +323,7 @@ function PatientDetails({ gender, age }) {
           </div>
 
           <div className="Treatment-box-7">
-            <Link to={``}>
+            <Link to={`/TreatmentList`}>
               <div className={"flex bg-white shadow-sm rounded-xl"}>
                 <div className={"w-[140px] h-[140px]"}>
                   <img
@@ -355,7 +355,7 @@ function PatientDetails({ gender, age }) {
           </div>
 
           <div className="Treatment-box-8">
-            <Link to={``}>
+            <Link to={`/TreatmentList`}>
               <div className={"flex bg-white shadow-sm rounded-xl"}>
                 <div className={"w-[140px] h-[140px]"}>
                   <img
@@ -387,7 +387,7 @@ function PatientDetails({ gender, age }) {
           </div>
 
           <div className="Treatment-box-9">
-            <Link to={``}>
+            <Link to={`/TreatmentList`}>
               <div className={"flex bg-white shadow-sm rounded-xl"}>
                 <div className={"w-[140px] h-[140px]"}>
                   <img
