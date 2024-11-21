@@ -60,38 +60,62 @@ function InspectionRequest() {
   //  };
 
   //  const days = generateCalendar();
-  const [currentDate, setCurrentDate] = useState(new Date());
+  // const [currentDate, setCurrentDate] = useState(new Date());
 
-  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  // const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  const getDaysInMonth = (year, month) => {
-    return new Date(year, month + 1, 0).getDate();
-  };
+  // const getDaysInMonth = (year, month) => {
+  //   return new Date(year, month + 1, 0).getDate();
+  // };
 
-  const getFirstDayOfMonth = (year, month) => {
-    return new Date(year, month, 1).getDay();
-  };
+  // const getFirstDayOfMonth = (year, month) => {
+  //   return new Date(year, month, 1).getDay();
+  // };
 
-  const handlePrevMonth = () => {
-    const prevDate = new Date(
-      currentDate.getFullYear(),
-      currentDate.getMonth() - 1
-    );
-    setCurrentDate(prevDate);
-  };
+  // const handlePrevMonth = () => {
+  //   const prevDate = new Date(
+  //     currentDate.getFullYear(),
+  //     currentDate.getMonth() - 1
+  //   );
+  //   setCurrentDate(prevDate);
+  // };
 
-  const handleNextMonth = () => {
-    const nextDate = new Date(
-      currentDate.getFullYear(),
-      currentDate.getMonth() + 1
-    );
-    setCurrentDate(nextDate);
-  };
+  // const handleNextMonth = () => {
+  //   const nextDate = new Date(
+  //     currentDate.getFullYear(),
+  //     currentDate.getMonth() + 1
+  //   );
+  //   setCurrentDate(nextDate);
+  // };
 
-  const year = currentDate.getFullYear();
-  const month = currentDate.getMonth();
-  const daysInMonth = getDaysInMonth(year, month);
-  const firstDay = getFirstDayOfMonth(year, month);
+  // const year = currentDate.getFullYear();
+  // const month = currentDate.getMonth();
+  // const daysInMonth = getDaysInMonth(year, month);
+  // const firstDay = getFirstDayOfMonth(year, month);
+
+
+    const daysInMonth = Array.from({ length: 31 }, (_, i) => i + 1); // Mock 31 days for August
+    const calendarData = [
+      {
+        date: "30",
+        question: "Are you experiencing any bleeding?",
+        answer: "No",
+        color: "bg-green-100",
+      },
+      {
+        date: "8",
+        question: "Are you experiencing any bleeding?",
+        answer: "No",
+        color: "bg-red-100",
+      },
+      {
+        date: "12",
+        question: "Are you experiencing any bleeding?",
+        answer: "No",
+        color: "bg-red-100",
+      },
+      // Add the rest of your data here...
+    ];
 
   return (
     // <DashboardView>
@@ -350,7 +374,7 @@ function InspectionRequest() {
           <div class="p-2 border rounded-md text-gray-700">30</div>
         </div>
       </div> */}
-      <div className=" mx-auto bg-white shadow-lg rounded-lg p-4">
+      {/* <div className=" mx-auto bg-white shadow-lg rounded-lg p-4">
         <div className="flex justify-between items-center mb-4">
           <button
             onClick={handlePrevMonth}
@@ -390,6 +414,41 @@ function InspectionRequest() {
               {idx + 1}
             </div>
           ))}
+        </div>
+      </div> */}
+
+      <div className=" mx-auto p-4">
+        <h1 className="text-xl font-bold text-center mb-4">August 2024</h1>
+        <div className="grid grid-cols-7 gap-2">
+          {["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].map((day) => (
+            <div key={day} className="text-sm font-bold text-center">
+              {day}
+            </div>
+          ))}
+
+          {daysInMonth.map((day) => {
+            const dayData = calendarData.find(
+              (entry) => entry.date === String(day)
+            );
+            return (
+              <div
+                key={day}
+                className={`border rounded-lg p-2 text-sm ${
+                  dayData?.color || "bg-gray-50"
+                }`}
+              >
+                <p className="font-bold">{day}</p>
+                {dayData ? (
+                  <>
+                    <p className="text-xs">{dayData.question}</p>
+                    <p className="text-xs font-semibold">A. {dayData.answer}</p>
+                  </>
+                ) : (
+                  <p className="text-xs text-gray-400">No data</p>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </DashboardView>

@@ -118,7 +118,7 @@ aside.AddClass {
     background-color: white;
     border: none;
     box-shadow: 0px 4px 20px 0px #0000000a !important;
-      /* background-color: rgb(0, 0, 0, 0.3) !important; */
+    /* background-color: rgb(0, 0, 0, 0.3) !important; */
   }
 
   .AddClass .bg-overlap {
@@ -153,17 +153,85 @@ aside.AddClass {
 
 /* ## TreatmentList ## */
 .TreatmentList ul li button {
- padding: 15px 10px;
+  padding: 15px 10px;
 }
 
-.calculeter{
-  width: 50px;
-  height: 50px;
+/*### .calculeter   ###*/
+.fc .fc-col-header-cell-cushion {
+  padding: 15px;
 }
 
-.month-button button{
-  width: 28px;
-  height: 28px;
-  margin: 0px auto ;
-  background-color: #f0f1f2;
+.fc-col-header thead {
+  background-color: #ecf4ff;
+  /* background-color: blueviolet; */
+}
+
+.fc-view-harness {
+  /* border-radius: 20px!important; */
+  /* background-color: aqua; */
+}
+
+.fc-dayGridMonth-view {
+  /* border-radius: 20px!important; */
+}
+
+.fc-scrollgrid {
+  border-radius: 20px !important;
+}
+
+.fc-header-toolbar div:nth-of-type(1) {
+  order: 2;
+}
+.fc-header-toolbar div:nth-of-type(2) {
+  order: 3;
+}
+.fc-header-toolbar div:nth-of-type(3) {
+  order: 1;
+  display: inline-block !important;
+}
+
+.fc-today-button {
+  background-color: white !important;
+  color: rgb(59, 55, 55) !important;
+  border: none !important;
+  text-transform: capitalize !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+}
+
+.fc-toolbar-chunk .fc-toolbar-title {
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  min-width: 220px !important;
+  text-align: center !important;
+}
+
+.fc-button-group button {
+  background-color: white !important;
+  color: rgb(59, 55, 55) !important;
+  border: none !important;
+  /* margin-left: 160px!important; */
+}
+
+.fc-event i {
+  color: #0d6efd !important;
+}
+
+/* .fc-event b{
+  display: none!important;
+} */
+
+.show {
+ display: block;
+}
+
+.hide{
+  display: none;
+}
+
+.checked-text .Calendar {
+  border-bottom: 3px solid #1479ff;
+}
+.checked-text .Statistics {
+  border-bottom: 3px solid #1479ff;
 }
