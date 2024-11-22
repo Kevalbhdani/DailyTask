@@ -175,9 +175,22 @@ aside.AddClass {
   /* border-radius: 20px!important; */
 }
 
-.fc-scrollgrid {
-  border-radius: 20px !important;
+ .fc-theme-standard .fc-scrollgrid {
+  /* border: 1px outset #d9d9d9; */
+  border-radius: 9px;
 }
+
+table tr:first-child th:first-child{
+  border-top-left-radius: 10px!important;
+}
+
+table tr:last-child th:last-child{
+  border-top-right-radius: 10px!important;
+}
+
+/* .table.rounded-corners {
+   border-radius: 20px!important;
+} */
 
 .fc-header-toolbar div:nth-of-type(1) {
   order: 2;
@@ -190,6 +203,8 @@ aside.AddClass {
   display: inline-block !important;
 }
 
+
+/* ### calender button ###  */
 .fc-today-button {
   background-color: white !important;
   color: rgb(59, 55, 55) !important;
@@ -200,22 +215,47 @@ aside.AddClass {
 }
 
 .fc-toolbar-chunk .fc-toolbar-title {
-  font-weight: 600 !important;
-  font-size: 18px !important;
+  font-weight: 500 !important;
+  font-size: 20px !important;
   min-width: 220px !important;
   text-align: center !important;
 }
 
 .fc-button-group button {
-  background-color: white !important;
-  color: rgb(59, 55, 55) !important;
+  background-color:#F0F1F2!important;
+  color: #8590a5!important;
   border: none !important;
-  /* margin-left: 160px!important; */
+  border-color: white!important;
+  border-radius: 50% !important;
+  width: 25px!important;
+  height: 25px!important;
+  padding: 0 !important;
+  
 }
 
+.fc .fc-button .fc-icon{
+  font-size: 16px;
+  vertical-align:baseline;
+}
+.fc-next-button {
+  margin-left: 1rem!important;
+}
+.fc-button {
+  border: none !important;
+}
 .fc-event i {
   color: #0d6efd !important;
 }
+
+.fc-day-sun .fc-daygrid-day-number{
+  color: #f00000!important;
+}
+.fc-day-other .fc-daygrid-day-number{
+  color: #858e9a;
+}
+
+
+
 
 /* .fc-event b{
   display: none!important;
@@ -231,6 +271,7 @@ aside.AddClass {
 
 .checked-text .Calendar {
   border-bottom: 3px solid #1479ff;
+  color: #0d6efd;
 }
 .checked-text .Statistics {
   border-bottom: 3px solid #1479ff;

@@ -918,3 +918,17 @@ export const Runningdata = [
     avatarUrl: require("../../imges/profileImg.png"),
   },
 ];
+// export const options = {
+//   title: "Company Performance",
+//   hAxis: { title: "Year", titleTextStyle: { color: "#333" } },
+//   vAxis: { minValue: 0 },
+//   chartArea: { width: "50%", height: "70%" },
+// };
+
+// export const data = [
+//   ["Year", "Sales"],
+//   ["2013", 1000],
+//   ["2014", 1170],
+//   ["2015", 660],
+//   ["2016", 1030],
+// ];

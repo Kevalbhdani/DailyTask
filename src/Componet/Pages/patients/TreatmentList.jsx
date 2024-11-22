@@ -7,12 +7,16 @@ import { Link } from "react-router-dom";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import Calender from "../../CommonComponet/Calender";
+import LineChart from "../../Helpers/Rechart";
+import Data from "../../Helpers/Rechart";
+
+
 function TreatmentList() {
   const [Selectedactive, setSelectedactive] = useState("");
   const [active, setactive] = useState(false);
-   const Class = () => {
-     setactive(!active);
-   };
+  const Class = () => {
+    setactive(!active);
+  };
   const handleSelectactive = (gender) => {
     setSelectedactive(gender);
   };
@@ -30,6 +34,26 @@ function TreatmentList() {
   ];
   const events = [{ title: "+ 1 more", start: new Date() }];
 
+   const [chartData, setChartData] = useState({
+     labels: Data.map((data) => data.year),
+
+     datasets: [
+       {
+         label: "Users Gained ",
+         data: Data.map((data) => data.userGain),
+         backgroundColor: [
+           "rgba(75,192,192,1)",
+           "#ecf0f1",
+           "#f0331a",
+           "#f3ba2f",
+           "#2a71d0",
+         ],
+         borderColor: "black",
+         borderWidth: 2,
+       },
+     ],
+   });
+
   return (
     <DashboardView>
       <div className="TreatmentList">
@@ -45,7 +69,7 @@ function TreatmentList() {
               className={`flex items-center cursor-pointer ${
                 Selectedactive === "Calendar" ? "checked-text show" : ""
               }`}
-              onClick={Class}
+              onClick={() => handleSelectactive("Calendar")}
             >
               <input
                 type="radio"
@@ -55,13 +79,13 @@ function TreatmentList() {
                 readOnly
               />
               <label
-                className={`flex items-center py-[12px] px-[15px]  bg-whiteLight Calendar ${
-                  active ? "show" : "hide"
-                }`}
-                onClick={() => handleSelectactive("Calendar")}
+                className={`flex items-center py-[12px] px-[15px]  bg-whiteLight Calendar
+                   ${active ? "" : ""}
+                `}
+                onClick={Class}
               >
-                <div className="font-nunitoSans font-medium text-base ">
-                  <p>Calendar</p>
+                <div>
+                  <p className="font-nunitoSans font-thin text-lg">Calendar</p>
                 </div>
               </label>
             </div>
@@ -70,7 +94,7 @@ function TreatmentList() {
               className={`flex items-center cursor-pointer ${
                 Selectedactive === "Statistics" ? "checked-text " : ""
               }`}
-              onClick={Class}
+              onClick={() => handleSelectactive("Statistics")}
             >
               <input
                 type="radio"
@@ -81,16 +105,19 @@ function TreatmentList() {
               />
               <label
                 className={`flex items-center py-[12px] px-[15px]  bg-whiteLight Calendar${
-                  active ? "show" : "hide"
+                  active ? "" : ""
                 }`}
+                onClick={Class}
               >
-                <div className="font-nunitoSans font-medium text-base  ">
-                  <p>Statistics</p>
+                <div>
+                  <p className="font-nunitoSans font-thin text-lg">
+                    Statistics
+                  </p>
                 </div>
               </label>
             </div>
           </div>
-          <div className="tab-contend bg-white rounded-xl p-4">
+          <div className="tab-contend bg-white  p-4 ">
             <FullCalendar
               plugins={[dayGridPlugin]}
               initialView="dayGridMonth"
@@ -99,12 +126,14 @@ function TreatmentList() {
               eventContent={Calender}
               eventBackgroundColor="#858E9A"
             />
+            <div >
+              <LineChart chartData={chartData} />
+            </div>
           </div>
         </div>
-        <div>Statistics</div>
       </div>
     </DashboardView>
   );
-}
+};
 
 export default TreatmentList;

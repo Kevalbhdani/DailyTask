@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DashboardView from "../Dashboard/DashboardView";
 
+
 function InspectionRequest() {
   //  const [currentDate, setCurrentDate] = useState(new Date());
 
@@ -93,30 +94,30 @@ function InspectionRequest() {
   // const daysInMonth = getDaysInMonth(year, month);
   // const firstDay = getFirstDayOfMonth(year, month);
 
-
-    const daysInMonth = Array.from({ length: 31 }, (_, i) => i + 1); // Mock 31 days for August
-    const calendarData = [
-      {
-        date: "30",
-        question: "Are you experiencing any bleeding?",
-        answer: "No",
-        color: "bg-green-100",
-      },
-      {
-        date: "8",
-        question: "Are you experiencing any bleeding?",
-        answer: "No",
-        color: "bg-red-100",
-      },
-      {
-        date: "12",
-        question: "Are you experiencing any bleeding?",
-        answer: "No",
-        color: "bg-red-100",
-      },
+    // const daysInMonth = Array.from({ length: 31 }, (_, i) => i + 1); // Mock 31 days for August
+    // const calendarData = [
+    //   {
+    //     date: "30",
+    //     question: "Are you experiencing any bleeding?",
+    //     answer: "No",
+    //     color: "bg-green-100",
+    //   },
+    //   {
+    //     date: "8",
+    //     question: "Are you experiencing any bleeding?",
+    //     answer: "No",
+    //     color: "bg-red-100",
+    //   },
+    //   {
+    //     date: "12",
+    //     question: "Are you experiencing any bleeding?",
+    //     answer: "No",
+    //     color: "bg-red-100",
+    //   },
       // Add the rest of your data here...
-    ];
+    // ];
 
+   
   return (
     // <DashboardView>
     //   {/* {isOpen && (
@@ -417,7 +418,7 @@ function InspectionRequest() {
         </div>
       </div> */}
 
-      <div className=" mx-auto p-4">
+      {/* <div className=" mx-auto p-4">
         <h1 className="text-xl font-bold text-center mb-4">August 2024</h1>
         <div className="grid grid-cols-7 gap-2">
           {["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].map((day) => (
@@ -450,7 +451,8 @@ function InspectionRequest() {
             );
           })}
         </div>
-      </div>
+      </div> */}
+   
     </DashboardView>
   );
 }
