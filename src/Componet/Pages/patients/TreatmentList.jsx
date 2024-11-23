@@ -7,8 +7,10 @@ import { Link } from "react-router-dom";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import Calender from "../../CommonComponet/Calender";
-import LineChart from "../../Helpers/Rechart";
-import Data from "../../Helpers/Rechart";
+import Linechart from "../../CommonComponet/Linechart";
+
+
+
 
 
 function TreatmentList() {
@@ -33,26 +35,6 @@ function TreatmentList() {
     },
   ];
   const events = [{ title: "+ 1 more", start: new Date() }];
-
-   const [chartData, setChartData] = useState({
-     labels: Data.map((data) => data.year),
-
-     datasets: [
-       {
-         label: "Users Gained ",
-         data: Data.map((data) => data.userGain),
-         backgroundColor: [
-           "rgba(75,192,192,1)",
-           "#ecf0f1",
-           "#f0331a",
-           "#f3ba2f",
-           "#2a71d0",
-         ],
-         borderColor: "black",
-         borderWidth: 2,
-       },
-     ],
-   });
 
   return (
     <DashboardView>
@@ -80,7 +62,7 @@ function TreatmentList() {
               />
               <label
                 className={`flex items-center py-[12px] px-[15px]  bg-whiteLight Calendar
-                   ${active ? "" : ""}
+                   ${active ? "show" : ""}
                 `}
                 onClick={Class}
               >
@@ -105,7 +87,7 @@ function TreatmentList() {
               />
               <label
                 className={`flex items-center py-[12px] px-[15px]  bg-whiteLight Calendar${
-                  active ? "" : ""
+                  active ? "show" : ""
                 }`}
                 onClick={Class}
               >
@@ -118,22 +100,24 @@ function TreatmentList() {
             </div>
           </div>
           <div className="tab-contend bg-white  p-4 ">
-            <FullCalendar
-              plugins={[dayGridPlugin]}
-              initialView="dayGridMonth"
-              weekends={true}
-              events={events}
-              eventContent={Calender}
-              eventBackgroundColor="#858E9A"
-            />
-            <div >
-              <LineChart chartData={chartData} />
+            <div className="hide show">
+              <FullCalendar
+                plugins={[dayGridPlugin]}
+                initialView="dayGridMonth"
+                weekends={true}
+                events={events}
+                eventContent={Calender}
+                eventBackgroundColor="#858E9A"
+              />
+            </div>
+            <div className="hide show">
+              <Linechart />
             </div>
           </div>
         </div>
       </div>
     </DashboardView>
   );
-};
+}
 
 export default TreatmentList;

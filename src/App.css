@@ -265,9 +265,10 @@ table tr:last-child th:last-child{
  display: block;
 }
 
-.hide{
+
+/* .hide{
   display: none;
-}
+} */
 
 .checked-text .Calendar {
   border-bottom: 3px solid #1479ff;
