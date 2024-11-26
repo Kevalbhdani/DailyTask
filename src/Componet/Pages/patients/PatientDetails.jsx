@@ -132,7 +132,7 @@ function PatientDetails({ gender, age }) {
 
         <div className="grid grid-cols-1 gap-8 md:gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-3 xl:grid-cols-3">
           <div className="Treatment-box-1">
-            <Link to={`/TreatmentList`}>
+            <Link to={`/TreatmentList`} >
               <div className={"flex bg-white shadow-sm rounded-xl"}>
                 <div className={"w-[140px] h-[140px]"}>
                   <img

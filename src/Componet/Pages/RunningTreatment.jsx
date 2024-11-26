@@ -60,7 +60,7 @@ function RunningTreatment() {
         </div>
 
         <div className="grid grid-cols-1  sm:grid-cols-1 md:grid-cols-2 lg:grid-3 xl:grid-cols-3 gap-x-6 gap-y-2">
-          {/* {Runningdata.map((item) => { */}
+          {/* {Runningdata((item) => { */}
           <div className="mt-3 p-3 bg-white shadow-sm rounded-xl">
             <Link to={`/PatientDetails`}>
               <div className="pb-4 gap-2 flex items-center flex-row borderline">

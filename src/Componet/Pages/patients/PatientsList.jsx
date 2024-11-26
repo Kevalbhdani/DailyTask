@@ -77,10 +77,7 @@ function PatientsList() {
                     <input type="checkbox" class="sr-only peer" value="" />
                     <div class="group peer bg-gray  rounded-full duration-300 w-8 h-4   after:duration-300 after:bg-white peer-checked:after:bg-sky peer-checked:ring-sky peer-checked:ring-2 after:rounded-full after:absolute after:h-2.5 after:w-2.5 after:top-[3px] after:right-1 after:flex after:justify-center after:items-center peer-checked:after:-translate-x-4 peer-hover:after:scale-95"></div>
                   </label>
-                  {/* <label class="relative inline-flex items-center cursor-pointer">
-                    <input type="checkbox" class="sr-only peer" value="" />
-                    <div class="group peer bg-white rounded-full duration-300 w-16 h-8 ring-2 ring-red-500 after:duration-300 after:bg-red-500 peer-checked:after:bg-green-500 peer-checked:ring-green-500 after:rounded-full after:absolute after:h-6 after:w-6 after:top-1 after:left-1 after:flex after:justify-center after:items-center peer-checked:after:translate-x-8 peer-hover:after:scale-95"></div>
-                  </label> */}
+
                 </div>
               </div>
             </div>

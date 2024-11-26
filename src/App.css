@@ -254,21 +254,17 @@ table tr:last-child th:last-child{
   color: #858e9a;
 }
 
-
-
-
 /* .fc-event b{
   display: none!important;
 } */
 
-.show {
+ .AddClass .show {
  display: block;
 }
 
-
-/* .hide{
+.AddClass .hide {
   display: none;
-} */
+}
 
 .checked-text .Calendar {
   border-bottom: 3px solid #1479ff;
@@ -276,4 +272,5 @@ table tr:last-child th:last-child{
 }
 .checked-text .Statistics {
   border-bottom: 3px solid #1479ff;
+  color: #0d6efd;
 }

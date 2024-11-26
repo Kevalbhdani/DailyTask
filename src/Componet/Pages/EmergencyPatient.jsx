@@ -1,46 +1,510 @@
-// import React, { useState } from 'react'
-
-// function EmergencyPatient() {
-//   const [active, setactive] = useState(false);
-
-//   const toggleClass =()=>{
-
-//     setactive(!active)
-//   }
-
-//   return (
-//     <div>
-//       <div className={`w-[50px]  h-[250px] bg-gray ${active ? 'AddClass' : ''} `}>
-//         box
-//       </div>
-
-//       <button className='py-2 px-8 me-5 bg-red-500 ' onClick={toggleClass}>Add</button>
-//       {/* <button className='py-2 px-8 me-5 bg-yellow-500' onClick={toggleClass}>Remove</button> */}
-
-//     </div>
-//   )
-// }
-
-// export default EmergencyPatient
-
 import React from "react";
-import DashboardView from "../Dashboard/DashboardView"; 
+import DashboardView from "../Dashboard/DashboardView";
+import Eyeicon from "../../imges/Svg File/Eyeicon";
+import  Breadcrumb  from "../CommonComponet/Breadcrumb";
+import { patients } from "../Helpers/Constant";
+import { Link } from "react-router-dom";
+import Trash from "../../imges/Svg File/Trash";
+import Callicon from "../../imges/Svg File/Callicon";
+import Maleicon from "../../imges/Svg File/Maleicon";
+import BdayIcon from "../../imges/Svg File/BdayIcon";
 
 function EmergencyPatient() {
+  const crumbs = [
+    { label: "Dashboard", path: "/dashboardmenu" },
+    { label: "Emergency Patient", path: "/dashboardmenu/EmergencyPatient" },
+  ];
+
   return (
     <DashboardView>
-      <br></br>
-      <br></br>
-      <label className="relative inline-flex items-center cursor-pointer">
-        <input type="checkbox" class="sr-only peer"></input>
-        <div className="group peer ring-0 checkedr:bg-gray  rounded-full outline-none duration-300 after:duration-300 w-9 h-4  shadow-md peer-checked:border-sky peer-focus:outline-none after:rounded-full after:absolute after:bg-gray-50 after:outline-none after:h-3 after:w-3 after:top-[2px] after:right-[2px] after:flex after:justify-start after:items-center after:bg-white checked:bg-sky peer-checked:after:-translate-x-5  peer:after:-scale-95"></div>
-      </label>
-      <br></br>
-      <br></br>
-      <label class="relative inline-flex items-center cursor-pointer">
-        <input type="checkbox" class="sr-only peer" value="" />
-        <div class="group peer bg-gray  rounded-full duration-300 w-9 h-4   after:duration-300 after:bg-white peer-checked:after:bg-sky peer-checked:ring-sky peer-checked:ring-2 after:rounded-full after:absolute after:h-3 after:w-3 after:top-[2px] after:right-1 after:flex after:justify-center after:items-center peer-checked:after:-translate-x-4 peer-hover:after:scale-95"></div>
-      </label>
+      <div>
+        <div className="Title py-2">
+          <h1 className="font-AlbertSans font-bold text-2xl ">
+            Inspection Request
+          </h1>
+          <Breadcrumb crumbs={crumbs}></Breadcrumb>
+        </div>
+        <div className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 lg:gap-4 md:gap-4 sm:gap-2 mx-auto ">
+          <div className="">
+            <Link
+              // to={`/${patient.id}`}
+              // key={patient.id}
+              className="bg-white shadow-sm rounded-2xl p-4 flex flex-col"
+            >
+              <div className=" lg:pb-4 md:pb-2 pb-2 flex flex-row items-center gap-3 borderline">
+                <div className="flex items-center ">
+                  <img
+                    src={require("../../imges/user.webp")}
+                    alt="Patient avatar"
+                    className="w-11 h-11 rounded-full"
+                  />
+                </div>
+                <div className="title">
+                  <h2 className="text-lg font-normal font-nunitoSans capitalize">
+                    Dianne Russell
+                  </h2>
+                </div>
+                <button className="text-red-500 ms-auto">
+                  <Trash></Trash>
+                </button>
+              </div>
+
+              <div className="flex lg:my-3 md:my-2 my-2 items-center space-x-2">
+                <div>
+                  <Callicon></Callicon>
+                </div>
+                <span className="font-nunitoSans font-normal text-black text-base !m-0 ps-2 ">
+                  +48 58798624
+                </span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="gender flex items-center">
+                  <span>
+                    <Maleicon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal capitalize ">
+                    Male
+                  </h6>
+                </div>
+                <div className="Age flex items-center">
+                  <span>
+                    <BdayIcon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal ">
+                    36
+                  </h6>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="">
+            <Link
+              // to={`/${patient.id}`}
+              // key={patient.id}
+              className="bg-white shadow-sm rounded-2xl p-4 flex flex-col"
+            >
+              <div className=" lg:pb-4 md:pb-2 pb-2 flex flex-row items-center gap-3 borderline">
+                <div className="flex items-center ">
+                  <img
+                    src={require("../../imges/user.webp")}
+                    alt="Patient avatar"
+                    className="w-11 h-11 rounded-full"
+                  />
+                </div>
+                <div className="title">
+                  <h2 className="text-lg font-normal font-nunitoSans capitalize">
+                    Dianne Russell
+                  </h2>
+                </div>
+                <button className="text-red-500 ms-auto">
+                  <Trash></Trash>
+                </button>
+              </div>
+
+              <div className="flex lg:my-3 md:my-2 my-2 items-center space-x-2">
+                <div>
+                  <Callicon></Callicon>
+                </div>
+                <span className="font-nunitoSans font-normal text-black text-base !m-0 ps-2 ">
+                  +48 58798624
+                </span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="gender flex items-center">
+                  <span>
+                    <Maleicon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal capitalize ">
+                    Male
+                  </h6>
+                </div>
+                <div className="Age flex items-center">
+                  <span>
+                    <BdayIcon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal ">
+                    36
+                  </h6>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="">
+            <Link
+              // to={`/${patient.id}`}
+              // key={patient.id}
+              className="bg-white shadow-sm rounded-2xl p-4 flex flex-col"
+            >
+              <div className=" lg:pb-4 md:pb-2 pb-2 flex flex-row items-center gap-3 borderline">
+                <div className="flex items-center ">
+                  <img
+                    src={require("../../imges/user.webp")}
+                    alt="Patient avatar"
+                    className="w-11 h-11 rounded-full"
+                  />
+                </div>
+                <div className="title">
+                  <h2 className="text-lg font-normal font-nunitoSans capitalize">
+                    Dianne Russell
+                  </h2>
+                </div>
+                <button className="text-red-500 ms-auto">
+                  <Trash></Trash>
+                </button>
+              </div>
+
+              <div className="flex lg:my-3 md:my-2 my-2 items-center space-x-2">
+                <div>
+                  <Callicon></Callicon>
+                </div>
+                <span className="font-nunitoSans font-normal text-black text-base !m-0 ps-2 ">
+                  +48 58798624
+                </span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="gender flex items-center">
+                  <span>
+                    <Maleicon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal capitalize ">
+                    Male
+                  </h6>
+                </div>
+                <div className="Age flex items-center">
+                  <span>
+                    <BdayIcon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal ">
+                    36
+                  </h6>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="">
+            <Link
+              // to={`/${patient.id}`}
+              // key={patient.id}
+              className="bg-white shadow-sm rounded-2xl p-4 flex flex-col"
+            >
+              <div className=" lg:pb-4 md:pb-2 pb-2 flex flex-row items-center gap-3 borderline">
+                <div className="flex items-center ">
+                  <img
+                    src={require("../../imges/user.webp")}
+                    alt="Patient avatar"
+                    className="w-11 h-11 rounded-full"
+                  />
+                </div>
+                <div className="title">
+                  <h2 className="text-lg font-normal font-nunitoSans capitalize">
+                    Dianne Russell
+                  </h2>
+                </div>
+                <button className="text-red-500 ms-auto">
+                  <Trash></Trash>
+                </button>
+              </div>
+
+              <div className="flex lg:my-3 md:my-2 my-2 items-center space-x-2">
+                <div>
+                  <Callicon></Callicon>
+                </div>
+                <span className="font-nunitoSans font-normal text-black text-base !m-0 ps-2 ">
+                  +48 58798624
+                </span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="gender flex items-center">
+                  <span>
+                    <Maleicon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal capitalize ">
+                    Male
+                  </h6>
+                </div>
+                <div className="Age flex items-center">
+                  <span>
+                    <BdayIcon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal ">
+                    36
+                  </h6>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="">
+            <Link
+              // to={`/${patient.id}`}
+              // key={patient.id}
+              className="bg-white shadow-sm rounded-2xl p-4 flex flex-col"
+            >
+              <div className=" lg:pb-4 md:pb-2 pb-2 flex flex-row items-center gap-3 borderline">
+                <div className="flex items-center ">
+                  <img
+                    src={require("../../imges/user.webp")}
+                    alt="Patient avatar"
+                    className="w-11 h-11 rounded-full"
+                  />
+                </div>
+                <div className="title">
+                  <h2 className="text-lg font-normal font-nunitoSans capitalize">
+                    Dianne Russell
+                  </h2>
+                </div>
+                <button className="text-red-500 ms-auto">
+                  <Trash></Trash>
+                </button>
+              </div>
+
+              <div className="flex lg:my-3 md:my-2 my-2 items-center space-x-2">
+                <div>
+                  <Callicon></Callicon>
+                </div>
+                <span className="font-nunitoSans font-normal text-black text-base !m-0 ps-2 ">
+                  +48 58798624
+                </span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="gender flex items-center">
+                  <span>
+                    <Maleicon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal capitalize ">
+                    Male
+                  </h6>
+                </div>
+                <div className="Age flex items-center">
+                  <span>
+                    <BdayIcon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal ">
+                    36
+                  </h6>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="">
+            <Link
+              // to={`/${patient.id}`}
+              // key={patient.id}
+              className="bg-white shadow-sm rounded-2xl p-4 flex flex-col"
+            >
+              <div className=" lg:pb-4 md:pb-2 pb-2 flex flex-row items-center gap-3 borderline">
+                <div className="flex items-center ">
+                  <img
+                    src={require("../../imges/user.webp")}
+                    alt="Patient avatar"
+                    className="w-11 h-11 rounded-full"
+                  />
+                </div>
+                <div className="title">
+                  <h2 className="text-lg font-normal font-nunitoSans capitalize">
+                    Dianne Russell
+                  </h2>
+                </div>
+                <button className="text-red-500 ms-auto">
+                  <Trash></Trash>
+                </button>
+              </div>
+
+              <div className="flex lg:my-3 md:my-2 my-2 items-center space-x-2">
+                <div>
+                  <Callicon></Callicon>
+                </div>
+                <span className="font-nunitoSans font-normal text-black text-base !m-0 ps-2 ">
+                  +48 58798624
+                </span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="gender flex items-center">
+                  <span>
+                    <Maleicon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal capitalize ">
+                    Male
+                  </h6>
+                </div>
+                <div className="Age flex items-center">
+                  <span>
+                    <BdayIcon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal ">
+                    36
+                  </h6>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="">
+            <Link
+              // to={`/${patient.id}`}
+              // key={patient.id}
+              className="bg-white shadow-sm rounded-2xl p-4 flex flex-col"
+            >
+              <div className=" lg:pb-4 md:pb-2 pb-2 flex flex-row items-center gap-3 borderline">
+                <div className="flex items-center ">
+                  <img
+                    src={require("../../imges/user.webp")}
+                    alt="Patient avatar"
+                    className="w-11 h-11 rounded-full"
+                  />
+                </div>
+                <div className="title">
+                  <h2 className="text-lg font-normal font-nunitoSans capitalize">
+                    Dianne Russell
+                  </h2>
+                </div>
+                <button className="text-red-500 ms-auto">
+                  <Trash></Trash>
+                </button>
+              </div>
+
+              <div className="flex lg:my-3 md:my-2 my-2 items-center space-x-2">
+                <div>
+                  <Callicon></Callicon>
+                </div>
+                <span className="font-nunitoSans font-normal text-black text-base !m-0 ps-2 ">
+                  +48 58798624
+                </span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="gender flex items-center">
+                  <span>
+                    <Maleicon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal capitalize ">
+                    Male
+                  </h6>
+                </div>
+                <div className="Age flex items-center">
+                  <span>
+                    <BdayIcon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal ">
+                    36
+                  </h6>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="">
+            <Link
+              // to={`/${patient.id}`}
+              // key={patient.id}
+              className="bg-white shadow-sm rounded-2xl p-4 flex flex-col"
+            >
+              <div className=" lg:pb-4 md:pb-2 pb-2 flex flex-row items-center gap-3 borderline">
+                <div className="flex items-center ">
+                  <img
+                    src={require("../../imges/user.webp")}
+                    alt="Patient avatar"
+                    className="w-11 h-11 rounded-full"
+                  />
+                </div>
+                <div className="title">
+                  <h2 className="text-lg font-normal font-nunitoSans capitalize">
+                    Dianne Russell
+                  </h2>
+                </div>
+                <button className="text-red-500 ms-auto">
+                  <Trash></Trash>
+                </button>
+              </div>
+
+              <div className="flex lg:my-3 md:my-2 my-2 items-center space-x-2">
+                <div>
+                  <Callicon></Callicon>
+                </div>
+                <span className="font-nunitoSans font-normal text-black text-base !m-0 ps-2 ">
+                  +48 58798624
+                </span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="gender flex items-center">
+                  <span>
+                    <Maleicon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal capitalize ">
+                    Male
+                  </h6>
+                </div>
+                <div className="Age flex items-center">
+                  <span>
+                    <BdayIcon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal ">
+                    36
+                  </h6>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="">
+            <Link
+              // to={`/${patient.id}`}
+              // key={patient.id}
+              className="bg-white shadow-sm rounded-2xl p-4 flex flex-col"
+            >
+              <div className=" lg:pb-4 md:pb-2 pb-2 flex flex-row items-center gap-3 borderline">
+                <div className="flex items-center ">
+                  <img
+                    src={require("../../imges/user.webp")}
+                    alt="Patient avatar"
+                    className="w-11 h-11 rounded-full"
+                  />
+                </div>
+                <div className="title">
+                  <h2 className="text-lg font-normal font-nunitoSans capitalize">
+                    Dianne Russell
+                  </h2>
+                </div>
+                <button className="text-red-500 ms-auto">
+                  <Trash></Trash>
+                </button>
+              </div>
+
+              <div className="flex lg:my-3 md:my-2 my-2 items-center space-x-2">
+                <div>
+                  <Callicon></Callicon>
+                </div>
+                <span className="font-nunitoSans font-normal text-black text-base !m-0 ps-2 ">
+                  +48 58798624
+                </span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="gender flex items-center">
+                  <span>
+                    <Maleicon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal capitalize ">
+                    Male
+                  </h6>
+                </div>
+                <div className="Age flex items-center">
+                  <span>
+                    <BdayIcon className={`text-sky`} />
+                  </span>
+                  <h6 className="text-black text-base mb-0 ps-2 font-nunitoSans font-normal ">
+                    36
+                  </h6>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+        </div>
+      </div>
     </DashboardView>
   );
 }

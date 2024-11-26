@@ -9,10 +9,6 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import Calender from "../../CommonComponet/Calender";
 import Linechart from "../../CommonComponet/Linechart";
 
-
-
-
-
 function TreatmentList() {
   const [Selectedactive, setSelectedactive] = useState("");
   const [active, setactive] = useState(false);
@@ -45,11 +41,16 @@ function TreatmentList() {
           </h1>
           <Breadcrumb crumbs={crumbs}></Breadcrumb>
         </div>
+
         <div className=" lg:grid-cols-12 md:grid-cols-12">
-          <div className="flex items-center gap-2 my-4 bg-white ">
+          <div
+            className={`flex items-center gap-2 my-4 bg-white ${
+              active ? "AddClass" : ""
+            }`}
+          >
             <div
               className={`flex items-center cursor-pointer ${
-                Selectedactive === "Calendar" ? "checked-text show" : ""
+                Selectedactive === "Calendar" ? "checked-text " : ""
               }`}
               onClick={() => handleSelectactive("Calendar")}
             >
@@ -61,9 +62,7 @@ function TreatmentList() {
                 readOnly
               />
               <label
-                className={`flex items-center py-[12px] px-[15px]  bg-whiteLight Calendar
-                   ${active ? "show" : ""}
-                `}
+                className={`flex items-center py-[12px] px-[15px]  bg-whiteLight Calendar`}
                 onClick={Class}
               >
                 <div>
@@ -74,7 +73,7 @@ function TreatmentList() {
 
             <div
               className={`flex items-center cursor-pointer ${
-                Selectedactive === "Statistics" ? "checked-text " : ""
+                Selectedactive === "Statistics" ? "checked-text  " : ""
               }`}
               onClick={() => handleSelectactive("Statistics")}
             >
@@ -86,9 +85,7 @@ function TreatmentList() {
                 readOnly
               />
               <label
-                className={`flex items-center py-[12px] px-[15px]  bg-whiteLight Calendar${
-                  active ? "show" : ""
-                }`}
+                className={`flex items-center py-[12px] px-[15px]  bg-whiteLight Statistics `}
                 onClick={Class}
               >
                 <div>
@@ -99,8 +96,8 @@ function TreatmentList() {
               </label>
             </div>
           </div>
-          <div className="tab-contend bg-white  p-4 ">
-            <div className="hide show">
+          <div className={`tab-contend bg-white p-4  `}>
+            <div className={`show hide`}>
               <FullCalendar
                 plugins={[dayGridPlugin]}
                 initialView="dayGridMonth"
@@ -110,7 +107,7 @@ function TreatmentList() {
                 eventBackgroundColor="#858E9A"
               />
             </div>
-            <div className="hide show">
+            <div className="show hide">
               <Linechart />
             </div>
           </div>
