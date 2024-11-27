@@ -19,5 +19,9 @@ export { default as Femaleicon } from "./Femaleicon";
 export { default as PatientProfile} from "./PatientProfile";
 export { default as Emailicon} from "./Emailicon";
 export { default as Editicon} from "./Editicon";
-export { default as Dateicon} from "./Dateicon"
-export { default as Eyeicon} from "./Eyeicon"
+export { default as Dateicon} from "./Dateicon";
+export { default as Eyeicon} from "./Eyeicon";
+export { default as Teth} from "./Teth";
+export { default as RunningLine} from "./RunningLine";
+export{ default as Inspection} from "./Inspection";
+export { default as Tethline } from "./Tethline";

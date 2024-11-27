@@ -4,13 +4,43 @@ import Breadcrumb from "../CommonComponet/Breadcrumb";
 import { Link } from "react-router-dom";
 import Eyeicon from "../../imges/Svg File/Eyeicon";
 import Dateicon from "../../imges/Svg File/Dateicon";
+import Cancelicon from "../../imges/Svg File/Cancelicon";
+import Inspection from "../../imges/Svg File/Inspection";
+import Tethline from "../../imges/Svg File/Tethline";
+import Tethlist from "../../imges/Svg File/Tethlist";
 
 function InspectionRequest() {
+  const [isOpen, setIsOpen] = useState(false);
+  // const [patient, setpatient] = useState(false);
+  
+
   const crumbs = [
     { label: "Dashboard", path: "/dashboardmenu" },
     { label: "Inspection Request", path: "/dashboardmenu/InspectionRequest" },
   ];
 
+  // ### tethbar   ###
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    console.log("Closing modal");
+    setIsOpen(false);
+    console.log("isOpen after close:", isOpen);
+  };
+
+    // ###  patient bar ###
+
+    //  const patientopenModal = () => {
+    //    setpatient(true);
+    //  };
+
+    //  const patientcloseModal = () => {
+    //    console.log("Closing modal");
+    //    setpatient(false);
+    //    console.log("isOpen after close:", patient);
+    //  };
   return (
     <DashboardView>
       <div>
@@ -26,7 +56,6 @@ function InspectionRequest() {
             Today
           </h3>
         </div>
-
         <div className="flex items-center justify-between bg-gray-50 shadow-sm rounded-lg p-3.5  bg-white mt-4">
           <div className="flex items-center relative">
             <div className="pe-2">
@@ -37,8 +66,10 @@ function InspectionRequest() {
               />
             </div>
             <div className="flex items-center ">
-              <p className="font-normal  text-gray-800 pe-4 ">Dianne Russell</p>
-              <div class="w-px h-7 bg-black mx-4"></div>
+              <p className="font-normal  text-gray-800  ">Dianne Russell</p>
+              <div className="mx-4">
+                <Inspection></Inspection>
+              </div>
               <div
                 className={
                   "font-nunitoSans font-normal text-sm flex items-center text-sky"
@@ -47,8 +78,10 @@ function InspectionRequest() {
                 <Dateicon></Dateicon>
                 <h3 className="ms-2 text-black">02 Sep, 2024</h3>
               </div>
-              <div class="w-px h-7 bg-black mx-4"></div>
-              <span>
+              <div className="mx-4">
+                <Inspection></Inspection>
+              </div>
+              <span onClick={openModal}>
                 <Eyeicon></Eyeicon>
               </span>
             </div>
@@ -74,8 +107,10 @@ function InspectionRequest() {
               />
             </div>
             <div className="flex items-center ">
-              <p className="font-normal  text-gray-800 pe-4 ">Dianne Russell</p>
-              <div class="w-px h-7 bg-black mx-4"></div>
+              <p className="font-normal  text-gray-800  ">Dianne Russell</p>
+              <div className="mx-4">
+                <Inspection></Inspection>
+              </div>
               <div
                 className={
                   "font-nunitoSans font-normal text-sm flex items-center text-sky"
@@ -84,8 +119,10 @@ function InspectionRequest() {
                 <Dateicon></Dateicon>
                 <h3 className="ms-2 text-black">02 Sep, 2024</h3>
               </div>
-              <div class="w-px h-7 bg-black mx-4"></div>
-              <span>
+              <div className="mx-4">
+                <Inspection></Inspection>
+              </div>
+              <span onClick={openModal}>
                 <Eyeicon></Eyeicon>
               </span>
             </div>
@@ -111,8 +148,10 @@ function InspectionRequest() {
               />
             </div>
             <div className="flex items-center ">
-              <p className="font-normal  text-gray-800 pe-4 ">Dianne Russell</p>
-              <div class="w-px h-7 bg-black mx-4"></div>
+              <p className="font-normal  text-gray-800  ">Dianne Russell</p>
+              <div className="mx-4">
+                <Inspection></Inspection>
+              </div>
               <div
                 className={
                   "font-nunitoSans font-normal text-sm flex items-center text-sky"
@@ -121,8 +160,10 @@ function InspectionRequest() {
                 <Dateicon></Dateicon>
                 <h3 className="ms-2 text-black">02 Sep, 2024</h3>
               </div>
-              <div class="w-px h-7 bg-black mx-4"></div>
-              <span>
+              <div className="mx-4">
+                <Inspection></Inspection>
+              </div>
+              <span onClick={openModal}>
                 <Eyeicon></Eyeicon>
               </span>
             </div>
@@ -148,8 +189,10 @@ function InspectionRequest() {
               />
             </div>
             <div className="flex items-center ">
-              <p className="font-normal  text-gray-800 pe-4 ">Dianne Russell</p>
-              <div class="w-px h-7 bg-black mx-4"></div>
+              <p className="font-normal  text-gray-800  ">Dianne Russell</p>
+              <div className="mx-4">
+                <Inspection></Inspection>
+              </div>
               <div
                 className={
                   "font-nunitoSans font-normal text-sm flex items-center text-sky"
@@ -158,8 +201,10 @@ function InspectionRequest() {
                 <Dateicon></Dateicon>
                 <h3 className="ms-2 text-black">02 Sep, 2024</h3>
               </div>
-              <div class="w-px h-7 bg-black mx-4"></div>
-              <span>
+              <div className="mx-4">
+                <Inspection></Inspection>
+              </div>
+              <span onClick={openModal}>
                 <Eyeicon></Eyeicon>
               </span>
             </div>
@@ -185,8 +230,10 @@ function InspectionRequest() {
               />
             </div>
             <div className="flex items-center ">
-              <p className="font-normal  text-gray-800 pe-4 ">Dianne Russell</p>
-              <div class="w-px h-7 bg-black mx-4"></div>
+              <p className="font-normal  text-gray-800  ">Dianne Russell</p>
+              <div className="mx-4">
+                <Inspection></Inspection>
+              </div>
               <div
                 className={
                   "font-nunitoSans font-normal text-sm flex items-center text-sky"
@@ -195,8 +242,10 @@ function InspectionRequest() {
                 <Dateicon></Dateicon>
                 <h3 className="ms-2 text-black">02 Sep, 2024</h3>
               </div>
-              <div class="w-px h-7 bg-black mx-4"></div>
-              <span>
+              <div className="mx-4">
+                <Inspection></Inspection>
+              </div>
+              <span onClick={openModal}>
                 <Eyeicon></Eyeicon>
               </span>
             </div>
@@ -212,6 +261,7 @@ function InspectionRequest() {
             </button>
           </div>
         </div>
+
         <div className="flex items-center justify-between bg-gray-50 shadow-sm rounded-lg p-3.5  bg-white mt-4">
           <div className="flex items-center relative">
             <div className="pe-2">
@@ -222,8 +272,10 @@ function InspectionRequest() {
               />
             </div>
             <div className="flex items-center ">
-              <p className="font-normal  text-gray-800 pe-4 ">Dianne Russell</p>
-              <div class="w-px h-7 bg-black mx-4"></div>
+              <p className="font-normal  text-gray-800  ">Dianne Russell</p>
+              <div className="mx-4">
+                <Inspection></Inspection>
+              </div>
               <div
                 className={
                   "font-nunitoSans font-normal text-sm flex items-center text-sky"
@@ -232,8 +284,10 @@ function InspectionRequest() {
                 <Dateicon></Dateicon>
                 <h3 className="ms-2 text-black">02 Sep, 2024</h3>
               </div>
-              <div class="w-px h-7 bg-black mx-4"></div>
-              <span>
+              <div className="mx-4">
+                <Inspection></Inspection>
+              </div>
+              <span onClick={openModal}>
                 <Eyeicon></Eyeicon>
               </span>
             </div>
@@ -249,6 +303,122 @@ function InspectionRequest() {
             </button>
           </div>
         </div>
+
+        <div>
+          {isOpen && (
+            <div className="fixed  inset-0 right-0 top-0  flex justify-end  bg-black bg-opacity-50 z-[999]  ">
+              <div
+                className="bg-white  rounded-l-3xl shadow-lg w-[450px] relative overflow-auto xl:overflow-y-hidden z-[999] "
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div
+                  className="profile-header lg:p-6 md:p-4 sm:p-3 p-3 justify-between flex items-center sticky top-0 right-0 z-10 bg-white
+                        "
+                >
+                  <div className="title-section">
+                    <h2 className="text-2xl font-bold  font-nunitoSans text-start">
+                      Add Treatment
+                    </h2>
+                    <p className="font-base font-nunitoSans font-light text-gray mt-1">
+                      Select the Tooth Where patient Feels the <br></br> Most
+                      Pain
+                    </p>
+                  </div>
+                  <div>
+                    <button
+                      className=" text-gray-400 hover:text-gray-600"
+                      onClick={closeModal}
+                    >
+                      <Cancelicon></Cancelicon>
+                    </button>
+                  </div>
+                </div>
+                <div className="profile-body h-full p-0">
+                  <div className=" ">
+                    <form action="">
+                      <div className="flex flex-col content-between">
+                        <div className="lg:p-5 md:p-4 sm:p-3 p-3 mb-5 mx-auto relative">
+                          <div>
+                            <Tethlist></Tethlist>
+                          </div>
+                          <div className="absolute top-52 left-28">
+                            <Tethline></Tethline>
+                          </div>
+                        </div>
+                        <div
+                          className="pb-4 px-3 lg:px-5 md:px-4 sm:px-3 right-0 bottom-0 sticky bg-white"
+                         
+                        >
+                          <button
+                            className="bg-blue-500 text-white w-full rounded-lg transition duration-300 py-3.5"
+                          
+                          >
+                            Next
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* <div>
+          {patient && (
+            <div className="fixed  inset-0 right-0 top-0  flex justify-end  bg-black bg-opacity-50 z-[999]  ">
+              <div
+                className="bg-white  rounded-l-3xl shadow-lg w-[450px] relative overflow-auto xl:overflow-y-hidden z-[999] "
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div
+                  className="profile-header lg:p-6 md:p-4 sm:p-3 p-3 justify-between flex items-center sticky top-0 right-0 z-10 bg-white
+                        "
+                >
+                  <div className="title-section">
+                    <h2 className="text-2xl font-bold  font-nunitoSans text-start">
+                      Add Treatment
+                    </h2>
+                    <p className="font-base font-nunitoSans font-light text-gray mt-1">
+                      Select the Tooth Where patient Feels the <br></br> Most
+                      Pain
+                    </p>
+                  </div>
+                  <div>
+                    <button
+                      className=" text-gray-400 hover:text-gray-600"
+                      onClick={patientcloseModal}
+                    >
+                      <Cancelicon></Cancelicon>
+                    </button>
+                  </div>
+                </div>
+                <div className="profile-body h-full p-0">
+                  <div className=" ">
+                    <form action="">
+                      <div className="flex flex-col content-between">
+                        <div className="lg:p-5 md:p-4 sm:p-3 p-3 mb-5 mx-auto relative">
+                          <div>
+                            <Tethlist></Tethlist>
+                          </div>
+                          <div className="absolute top-52 left-28">
+                            <Tethline></Tethline>
+                          </div>
+                        </div>
+                        <div className="pb-4 px-3 lg:px-5 md:px-4 sm:px-3 right-0 bottom-0 sticky bg-white ">
+                          <button className="bg-blue-500 text-white w-full rounded-lg transition duration-300 py-3.5">
+                            Save
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div> */}
       </div>
     </DashboardView>
   );

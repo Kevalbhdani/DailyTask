@@ -3,6 +3,7 @@ import DashboardView from "../Dashboard/DashboardView";
 import Eyeicon from "../../imges/Svg File/Eyeicon";
 import  Breadcrumb  from "../CommonComponet/Breadcrumb";
 import { patients } from "../Helpers/Constant";
+
 import { Link } from "react-router-dom";
 import Trash from "../../imges/Svg File/Trash";
 import Callicon from "../../imges/Svg File/Callicon";
@@ -15,16 +16,20 @@ function EmergencyPatient() {
     { label: "Emergency Patient", path: "/dashboardmenu/EmergencyPatient" },
   ];
 
+   const handleClick = (event) => {
+     event.stopPropagation();
+     console.log("Button clicked");
+   };
   return (
     <DashboardView>
       <div>
         <div className="Title py-2">
           <h1 className="font-AlbertSans font-bold text-2xl ">
-            Inspection Request
+            Emergency Patient
           </h1>
           <Breadcrumb crumbs={crumbs}></Breadcrumb>
         </div>
-        <div className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 lg:gap-4 md:gap-4 sm:gap-2 mx-auto ">
+        <div className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 lg:gap-6 md:gap-4 sm:gap-2 mx-auto ">
           <div className="">
             <Link
               // to={`/${patient.id}`}
@@ -36,7 +41,7 @@ function EmergencyPatient() {
                   <img
                     src={require("../../imges/user.webp")}
                     alt="Patient avatar"
-                    className="w-11 h-11 rounded-full"
+                    className="w-9 h-9 rounded-full"
                   />
                 </div>
                 <div className="title">
@@ -89,7 +94,7 @@ function EmergencyPatient() {
                   <img
                     src={require("../../imges/user.webp")}
                     alt="Patient avatar"
-                    className="w-11 h-11 rounded-full"
+                    className="w-9 h-9 rounded-full"
                   />
                 </div>
                 <div className="title">
@@ -142,7 +147,7 @@ function EmergencyPatient() {
                   <img
                     src={require("../../imges/user.webp")}
                     alt="Patient avatar"
-                    className="w-11 h-11 rounded-full"
+                    className="w-9 h-9 rounded-full"
                   />
                 </div>
                 <div className="title">
@@ -195,7 +200,7 @@ function EmergencyPatient() {
                   <img
                     src={require("../../imges/user.webp")}
                     alt="Patient avatar"
-                    className="w-11 h-11 rounded-full"
+                    className="w-9 h-9 rounded-full"
                   />
                 </div>
                 <div className="title">
@@ -248,7 +253,7 @@ function EmergencyPatient() {
                   <img
                     src={require("../../imges/user.webp")}
                     alt="Patient avatar"
-                    className="w-11 h-11 rounded-full"
+                    className="w-9 h-9 rounded-full"
                   />
                 </div>
                 <div className="title">
@@ -301,7 +306,7 @@ function EmergencyPatient() {
                   <img
                     src={require("../../imges/user.webp")}
                     alt="Patient avatar"
-                    className="w-11 h-11 rounded-full"
+                    className="w-9 h-9 rounded-full"
                   />
                 </div>
                 <div className="title">
@@ -354,7 +359,7 @@ function EmergencyPatient() {
                   <img
                     src={require("../../imges/user.webp")}
                     alt="Patient avatar"
-                    className="w-11 h-11 rounded-full"
+                    className="w-9 h-9 rounded-full"
                   />
                 </div>
                 <div className="title">
@@ -407,7 +412,7 @@ function EmergencyPatient() {
                   <img
                     src={require("../../imges/user.webp")}
                     alt="Patient avatar"
-                    className="w-11 h-11 rounded-full"
+                    className="w-9 h-9 rounded-full"
                   />
                 </div>
                 <div className="title">
@@ -460,7 +465,7 @@ function EmergencyPatient() {
                   <img
                     src={require("../../imges/user.webp")}
                     alt="Patient avatar"
-                    className="w-11 h-11 rounded-full"
+                    className="w-9 h-9 rounded-full"
                   />
                 </div>
                 <div className="title">
@@ -502,9 +507,10 @@ function EmergencyPatient() {
               </div>
             </Link>
           </div>
-
         </div>
       </div>
+
+    
     </DashboardView>
   );
 }
