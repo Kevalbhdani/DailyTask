@@ -9,6 +9,9 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import Calender from "../../CommonComponet/Calender";
 import Linechart from "../../CommonComponet/Linechart";
 
+import { Line } from "react-chartjs-2";
+
+
 function TreatmentList() {
   const [Selectedactive, setSelectedactive] = useState("");
   const [active, setactive] = useState(false);
@@ -109,6 +112,7 @@ function TreatmentList() {
             </div>
             <div className="show hide">
               <Linechart />
+            
             </div>
           </div>
         </div>

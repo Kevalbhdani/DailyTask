@@ -17,8 +17,7 @@ import {
   NotificationIcon,
   SetingIcon,
 } from "../../imges/Svg File/Index";
-import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
-import Drawer from "react-modern-drawer";
+
 function DashboardView({ children }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);

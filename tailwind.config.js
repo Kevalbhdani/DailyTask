@@ -33,6 +33,7 @@ module.exports = {
         tabboder: "#d9d9d9",
         tabboder2: "#DDDDDD",
         graybtn:"#f0f1f2",
+        btngray:"#D1D4D9",
       },
       fontSize: {
         sm: ["14px", "20px"],

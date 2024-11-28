@@ -29,6 +29,7 @@ function PatientDetails({ gender, age }) {
     },
   ];
   const [isOpen, setIsOpen] = useState(false);
+   const [visibleRight, setVisibleRight] = useState();
    const openModal = () => {
      setIsOpen(true);
    };
@@ -454,8 +455,7 @@ function PatientDetails({ gender, age }) {
                       Add Treatment
                     </h2>
                     <p className="font-base font-nunitoSans font-light text-gray mt-1">
-                      Select the Tooth Where patient Feels the <br></br> Most
-                      Pain
+                      Select the Tooth Where patient Feels the Most<br></br> Pain
                     </p>
                   </div>
                   <div>
@@ -482,7 +482,7 @@ function PatientDetails({ gender, age }) {
                         <div className="pb-4 px-3 lg:px-5 md:px-4 sm:px-3 right-0 bottom-0 sticky bg-white ">
                           <button
                             className="bg-blue-500 text-white w-full rounded-lg transition duration-300 py-3.5"
-                            onClick={() => setVisibleRight(true)}
+                          
                           >
                             Next
                           </button>
@@ -496,19 +496,7 @@ function PatientDetails({ gender, age }) {
           )}
         </div>
 
-        <Sidebar
-          visible={visibleRight}
-          position="right"
-          onHide={() => setVisibleRight(false)}
-        >
-          <h2>Right Sidebar</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-        </Sidebar>
+        
       </div>
     </DashboardView>
   );

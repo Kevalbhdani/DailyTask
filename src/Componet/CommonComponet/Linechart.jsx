@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Line  } from "react-chartjs-2";
+import { Utils } from "chart.js";
 // import Utils from "../CommonComponet";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -22,28 +24,8 @@ ChartJS.register(
 );
 
 function Linechart() {
-  let width, height, gradient;
-  function getGradient(ctx, chartArea) {
-    const chartWidth = chartArea.right - chartArea.left;
-    const chartHeight = chartArea.bottom - chartArea.top;
-    if (!gradient || width !== chartWidth || height !== chartHeight) {
-      // Create the gradient because this is either the first render
-      // or the size of the chart has changed
-      width = chartWidth;
-      height = chartHeight;
-      gradient = ctx.createLinearGradient(
-        0,
-        chartArea.bottom,
-        0,
-        chartArea.top
-      );
-      // gradient.addColorStop(0, Utils.CHART_COLORS.blue);
-      // gradient.addColorStop(0.5, Utils.CHART_COLORS.yellow);
-      // gradient.addColorStop(1, Utils.CHART_COLORS.red);
-    }
+  
 
-    return gradient;
-  }
   const [month, setMonth] = useState("November");
  
   const data = {
@@ -58,7 +40,7 @@ function Linechart() {
     ],
   };
 
-  const chartData = {
+  const   chartData = {
     labels: Array.from({ length: 30 }, (_, i) => i + 1), // Days of the month
     datasets: [
       {
@@ -66,24 +48,28 @@ function Linechart() {
         data: data[month],
         borderWidth: 1,
         borderColor: "rgba(59, 130, 246, 1)",
-        // backgroundColor: " rgba(59, 130, 246, 0.2)",
-        fill: true,
+        fill:true,
         tension: 0,
         pointBackgroundColor: "rgba(59, 130, 246, 1)",
         pointBorderColor: "#fff",
         pointStyle: "",
         pointRadius: 5,
-        // backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
-        // BackgroundColor: function (context) {
-        //   const chart = context.chart;
-        //   const { ctx, chartArea } = chart;
-
-        //   if (!chartArea) {
-        //     // This case happens on initial chart load
-        //     return;
-        //   }
-        //   return getGradient(ctx, chartArea);
-        // },
+        backgroundColor: (context) => {
+          const chart = context.chart;
+          const { ctx, chartArea } = chart;
+          if (!chartArea) {
+            return null;
+          }
+          const gradient = ctx.createLinearGradient(
+            0,
+            chartArea.top,
+            0,
+            chartArea.bottom
+          );
+          gradient.addColorStop(0, "rgba(67, 121, 238, 0.5)");
+          gradient.addColorStop(1, "rgba(67, 121, 238, 0)");
+          return gradient;
+        },
       },
     ],
   };
@@ -104,10 +90,10 @@ function Linechart() {
       x: {
         title: { display: true, text: "Days" },
         ticks: {
-          color: "e7e8eb", // Text color (Gray-600)
+          color: "e7e8eb",
         },
         grid: {
-          color: "", // Grid line color (Gray-300)
+          color: "",
         },
       },
       y: {
@@ -115,14 +101,15 @@ function Linechart() {
         min: 0,
         max: 10,
         ticks: {
-          color: "black", // Text color (Gray-600)
+          color: "black", 
         },
         grid: {
-          color: "#e7e8eb", // Grid line color (Gray-300)
+          color: "#e7e8eb", 
         },
       },
     },
   };
+ 
   return (
     <div>
       <div className=" Title py-2  flex flex-col">
@@ -137,7 +124,7 @@ function Linechart() {
             <option value="November">November</option>
           </select>
         </div>
-        <Line data={chartData} options={options} />
+        <Line data={chartData} options={options}  />
       </div>
     </div>
   );

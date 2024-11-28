@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import Slider from 'react-slick';
+import Slider from "react-slick";
 import { RiEyeLine } from "react-icons/ri";
 import { RiEyeOffLine } from "react-icons/ri";
-import { countries } from "../../Helpers/Constant"
+import { countries } from "../../Helpers/Constant";
 import { PiKey } from "react-icons/pi";
-
 
 function RegisterPage() {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -30,7 +29,6 @@ function RegisterPage() {
     setDropdownOpen(false);
   };
   return (
-    
     <div>
       <div className="min-h-screen relative mx-auto ">
         <div className="bg-overlay lg:hidden absolute  w-full h-full "></div>
@@ -48,25 +46,24 @@ function RegisterPage() {
                 >
                   <SwiperSlide>
                     <div className="main">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                      do.{" "}
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do.{" "}
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
                     <div className="main">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                      do.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do.
                     </div>
                   </SwiperSlide>
                   <SwiperSlide>
                     <div className="main">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                      do.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do.
                     </div>
                   </SwiperSlide>
                 </Swiper>
               </div>
-        
             </div>
             <div className="lg:col-span-1 col-span-2 h-full z-10 p-3 ">
               <div className=" auth-img-right-card ">
@@ -78,7 +75,8 @@ function RegisterPage() {
                           <div className="flex justify-end  text-gray p-2">
                             <div
                               className="bg-white rounded cursor-pointer flex items-center justify-end bg-transparent "
-                              onClick={() => setDropdownOpen(!dropdownOpen)}>
+                              onClick={() => setDropdownOpen(!dropdownOpen)}
+                            >
                               <img
                                 src={selectedCountry.flag}
                                 alt={selectedCountry.name}
@@ -105,7 +103,7 @@ function RegisterPage() {
                                 ))}
                               </ul>
                             )}
-                          </div>  
+                          </div>
                           <div className="h-full w-full px-5 ">
                             <div className="flex justify-center items-center mx-auto mt-10  ">
                               <img
@@ -119,12 +117,13 @@ function RegisterPage() {
                             </div>
 
                             <div className="mt-5 mb-5 sm:mb-5 sm:text-left text-center text-2xl ">
-
-                              <h2 className='font-nunitoSans font-bold'>
+                              <h2 className="font-nunitoSans font-bold">
                                 Register Account
                               </h2>
                               <p className="text-gray mt-3  text-sm sm:text-base  font-nunitoSans font-normal">
-                                Register Now to Manage Your Appointments with Ease!                              </p>
+                                Register Now to Manage Your Appointments with
+                                Ease!{" "}
+                              </p>
                             </div>
                             <div className="relative font-nunitoSans font-normal">
                               <form action="">
@@ -187,7 +186,6 @@ function RegisterPage() {
                                   />
                                 </div>
 
-
                                 <div className="mt-5 ">
                                   <label
                                     for="name"
@@ -196,70 +194,98 @@ function RegisterPage() {
                                     Role
                                   </label>
 
-                                  <select id="lang" className="w-full ps-5 pe-5 py-3 text-sm  bg-whiteLight rounded-xl  ">
-                                    <option value="">Hospital / Organisation-0</option>
-                                    <option value="">Hospital / Organisation-1</option>
-                                    <option value="">Hospital / Organisation-2</option>
+                                  <select
+                                    id="lang"
+                                    className="w-full ps-5 pe-5 py-3 text-sm  bg-whiteLight rounded-xl  "
+                                  >
+                                    <option value="">
+                                      Hospital / Organisation-0
+                                    </option>
+                                    <option value="">
+                                      Hospital / Organisation-1
+                                    </option>
+                                    <option value="">
+                                      Hospital / Organisation-2
+                                    </option>
                                   </select>
                                 </div>
 
-                              
                                 <div className="mt-5 ">
-                                  <label className="text-sm text-black mb-2 font-normal">Password</label>
+                                  <label className="text-sm text-black mb-2 font-normal">
+                                    Password
+                                  </label>
                                   <div className="relative">
                                     <input
-                                      type={passwordVisible ? "text" : "password"} 
+                                      type={
+                                        passwordVisible ? "text" : "password"
+                                      }
                                       placeholder="Password"
                                       className="w-full px-11 py-3 bg-whiteLight rounded-xl text-sm"
                                     />
                                     <button
                                       type="button"
-                                      onClick={togglePasswordVisibility} 
+                                      onClick={togglePasswordVisibility}
                                       className="absolute top-[10px] right-5 text-gray-500 cursor-pointer"
                                     >
-                                      {passwordVisible ? <RiEyeLine fontSize={20} /> : <RiEyeOffLine fontSize={20} />} 
+                                      {passwordVisible ? (
+                                        <RiEyeLine fontSize={20} />
+                                      ) : (
+                                        <RiEyeOffLine fontSize={20} />
+                                      )}
                                     </button>
-                                    <button className='absolute top-[12px] left-3'><PiKey fontSize={20} /></button>
+                                    <button className="absolute top-[12px] left-3">
+                                      <PiKey fontSize={20} />
+                                    </button>
                                   </div>
                                 </div>
 
                                 <div className="mt-5 ">
-                                  <label className="text-sm text-black mb-2 font-normal">Confirm Password</label>
+                                  <label className="text-sm text-black mb-2 font-normal">
+                                    Confirm Password
+                                  </label>
                                   <div className="relative">
                                     <input
-                                      type={confirmPasswordVisible ? "text" : "password"} 
+                                      type={
+                                        confirmPasswordVisible
+                                          ? "text"
+                                          : "password"
+                                      }
                                       placeholder="Confirm Password"
                                       className="w-full px-11 py-3 bg-whiteLight rounded-xl text-sm"
                                     />
                                     <button
                                       type="button"
-                                      onClick={toggleConfirmPasswordVisibility} 
+                                      onClick={toggleConfirmPasswordVisibility}
                                       className="absolute top-[10px] right-5 text-gray-500 cursor-pointer"
                                     >
-                                      {confirmPasswordVisible ? <RiEyeLine fontSize={20} /> : <RiEyeOffLine fontSize={20} />} 
+                                      {confirmPasswordVisible ? (
+                                        <RiEyeLine fontSize={20} />
+                                      ) : (
+                                        <RiEyeOffLine fontSize={20} />
+                                      )}
                                     </button>
 
-                                    <button className='absolute top-[10px] left-3'><PiKey fontSize={20} /></button>
+                                    <button className="absolute top-[10px] left-3">
+                                      <PiKey fontSize={20} />
+                                    </button>
                                   </div>
-                                  </div>
-
-
+                                </div>
                               </form>
                             </div>
                             <div className="sm:mt-10 mt-10  sm:px-5">
                               <button className="w-full px-11 py-3  bg-sky rounded-xl font-AlbertSans font-semibold text-white ">
                                 Submit Application
                               </button>
-                             <a href="/">
+                              <a href="/">
                                 <button className="w-full mt-3 px-3 py-3  bg-whiteSky rounded-xl font-AlbertSans font-normal text-sm">
                                   Back to login
                                 </button>
-                             </a>
+                              </a>
                               <p className="text-center mt-4 font-semibold AlbertSans text-gray text-xs">
-                                By continuing you are agree with Terms & Conditions and Privacy Policy
+                                By continuing you are agree with Terms &
+                                Conditions and Privacy Policy
                               </p>
                             </div>
-
                           </div>
                         </div>
                       </div>
@@ -272,10 +298,9 @@ function RegisterPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default RegisterPage
+export default RegisterPage;
 
-
-  // < RiEyeOffLine />
+// < RiEyeOffLine />
