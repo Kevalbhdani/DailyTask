@@ -112,9 +112,9 @@ function Linechart() {
  
   return (
     <div>
-      <div className=" Title py-2  flex flex-col">
+      <div className=" Title   flex flex-col">
         <div className="flex flex-row justify-between items-center w-full">
-          <h1 className="font-AlbertSans font-normal text-xl ">Patient Pain</h1>
+          <h1 className="font-AlbertSans font-medium text-lg ">Patient Pain</h1>
           <select
             value={month}
             onChange={(e) => setMonth(e.target.value)}

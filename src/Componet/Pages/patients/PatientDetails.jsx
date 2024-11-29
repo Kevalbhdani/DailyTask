@@ -19,7 +19,11 @@ import Cancelicon from "../../../imges/Svg File/Cancelicon";
 import { Sidebar } from "primereact/sidebar";
 function PatientDetails({ gender, age }) {
   // const { id } = useParams();
-
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
+  const handleNext = () => {
+    setCurrentStep(currentStep + 1);
+  };
   const crumbs = [
     { label: "Dashboard", path: "/dashboardmenu" },
     { label: "Patients List", path: "/patients" },
@@ -28,7 +32,6 @@ function PatientDetails({ gender, age }) {
       path: "/dashboardmenu/patients/PatientDetails",
     },
   ];
-  const [isOpen, setIsOpen] = useState(false);
    const [visibleRight, setVisibleRight] = useState();
    const openModal = () => {
      setIsOpen(true);
@@ -440,60 +443,150 @@ function PatientDetails({ gender, age }) {
           </div>
         </div>
         <div>
-          {isOpen && (
-            <div className="fixed  inset-0 right-0 top-0  flex justify-end  bg-black bg-opacity-50 z-[999]  ">
-              <div
-                className="bg-white  rounded-l-3xl shadow-lg w-[450px] relative overflow-auto xl:overflow-y-hidden z-[999] "
-                onClick={(e) => e.stopPropagation()}
-              >
-                <div
-                  className="profile-header lg:p-6 md:p-4 sm:p-3 p-3 justify-between flex items-center sticky top-0 right-0 z-10 bg-white
-                        "
-                >
-                  <div className="title-section">
-                    <h2 className="text-2xl font-bold  font-nunitoSans text-start">
-                      Add Treatment
-                    </h2>
-                    <p className="font-base font-nunitoSans font-light text-gray mt-1">
-                      Select the Tooth Where patient Feels the Most<br></br> Pain
-                    </p>
-                  </div>
-                  <div>
-                    <button
-                      className=" text-gray-400 hover:text-gray-600"
-                      onClick={closeModal}
+          {
+            isOpen && (
+              <div>
+                {currentStep === 1 && (
+                  <div className="fixed  inset-0 right-0 top-0  flex justify-end  bg-black bg-opacity-50 z-[999]  ">
+                    <div
+                      className="bg-white  rounded-l-3xl shadow-lg w-[450px] relative overflow-auto xl:overflow-y-hidden z-[999] "
+                    // onClick={(e) => e.stopPropagation()}
                     >
-                      <Cancelicon></Cancelicon>
-                    </button>
-                  </div>
-                </div>
-                <div className="profile-body h-full p-0">
-                  <div className=" ">
-                    <form action="">
-                      <div className="flex flex-col content-between">
-                        <div className="lg:p-5 md:p-4 sm:p-3 p-3 mb-5 mx-auto relative">
-                          <div>
-                            <Tethlist></Tethlist>
-                          </div>
-                          <div className="absolute top-52 left-28">
-                            <Tethline></Tethline>
-                          </div>
+                      <div
+                        className="profile-header lg:p-6 md:p-4 sm:p-3 p-3 justify-between flex items-center sticky top-0 right-0 z-10 bg-white
+                        "
+                      >
+                        <div className="title-section">
+                          <h2 className="text-2xl font-bold  font-nunitoSans text-start">
+                            Add Treatment
+                          </h2>
+                          <p className="font-base font-nunitoSans font-light text-gray mt-1">
+                            Select the Tooth Where patient Feels the Most<br></br>
+                            Pain
+                          </p>
                         </div>
-                        <div className="pb-4 px-3 lg:px-5 md:px-4 sm:px-3 right-0 bottom-0 sticky bg-white ">
+                        <div>
                           <button
-                            className="bg-blue-500 text-white w-full rounded-lg transition duration-300 py-3.5"
-                          
+                            className=" text-gray-600  rounded-full hover:text-gray-600"
+                            onClick={closeModal}
                           >
-                            Next
+                            <Cancelicon></Cancelicon>
                           </button>
                         </div>
                       </div>
-                    </form>
+                      <div className="profile-body h-full p-0">
+                        <div className=" ">
+                          <form action="">
+                            <div className="flex flex-col content-between">
+                              <div className="lg:p-5 md:p-4 sm:p-3 p-3 mb-5 flex items-center justify-center relative">
+                                <div>
+                                  <Tethlist></Tethlist>
+                                </div>
+                                <div className="absolute  ">
+                                  <Tethline></Tethline>
+                                </div>
+                              </div>
+                              <div className="pb-4 px-3 lg:px-5 md:px-4 sm:px-3 right-0 bottom-0 sticky bg-white">
+                                <button
+                                  className="bg-blue-500 text-white w-full rounded-lg transition duration-300 py-3.5"
+                                  onClick={handleNext}
+                                >
+                                  Next
+                                </button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                )}
+
+                {currentStep === 2 && (
+                  <div className="fixed  inset-0 right-0 top-0  flex justify-end  bg-black bg-opacity-50 z-[999]  ">
+                    <div
+                      className="bg-white  rounded-l-3xl shadow-lg w-[450px] relative overflow-auto xl:overflow-y-hidden z-[999] "
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <div
+                        className="profile-header lg:p-6 md:p-4 sm:p-3 p-3 justify-between flex items-center sticky top-0 right-0 z-10 bg-white
+                        "
+                      >
+                        <div className="title-section">
+                          <h2 className="text-2xl font-bold  font-nunitoSans text-start">
+                            Add Patient
+                          </h2>
+                          <p className="font-base font-nunitoSans font-light text-gray mt-1">
+                            Add patient all details
+                          </p>
+                        </div>
+                        <div>
+                          <button
+                            className=" text-gray-400 hover:text-gray-600"
+                            onClick={closeModal}
+                          >
+                            <Cancelicon></Cancelicon>
+                          </button>
+                        </div>
+                      </div>
+                      <div className="profile-body h-full p-0">
+                        <div className="flex flex-col content-between">
+                          <div className="lg:p-5 md:p-4 sm:p-3 p-3 mb-5 text-start">
+                            <div className="h-full p-0 ">
+                              <ul className="  m-0 py-0">
+                                <li className="font-normal font-nunitoSans my-1.5 p-2.5 rounded-lg">
+                                  Sinus + Impala
+                                </li>
+                                <li className="font-normal font-nunitoSans my-1.5 p-2.5 rounded-lg">
+                                  Completion 35,36
+                                </li>
+                                <li className="font-normal font-nunitoSans my-1.5 p-2.5 rounded-lg">
+                                  Resection 14
+                                </li>
+                                <li className="font-normal font-nunitoSans my-1.5 p-2.5 rounded-lg">
+                                  Sinus + Impala
+                                </li>
+                                <li className="font-normal font-nunitoSans my-1.5 p-2.5 rounded-lg">
+                                  ex 14
+                                </li>
+                                <li className="font-normal  font-nunitoSans my-1.5 p-2.5 rounded-lg">
+                                  Sinus + Impala
+                                </li>
+                                <li className="font-normal  font-nunitoSans my-1.5 p-2.5 rounded-lg">
+                                  Sinus + Impala
+                                </li>
+                                <li className="font-normal font-nunitoSans my-1.5 p-2.5 rounded-lg">
+                                  Completion 35,36
+                                </li>
+                                <li className="font-normal font-nunitoSans my-1.5 p-2.5 rounded-lg">
+                                  Other
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="pb-5 px-3 lg:px-5 md:px-4 sm:px-3 right-0 bottom-0 sticky bg-white ">
+                            <div className=" mb-4">
+                              <lable className="font-semibold mb-2 bg-white"></lable>
+                              <input
+                                type="text"
+                                placeholder="Enter Treatment"
+                                className=" gap-y-2 w-full px-3 py-3.5 bg-whiteLight rounded-xl text-sm required:border-red-500"
+                              />
+                            </div>
+                            <button className="bg-blue-500 text-white w-full rounded-lg transition duration-300 py-3.5">
+                              Save
+                            </button>
+                          </div>
+                        </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-            </div>
-          )}
+            )
+          }
         </div>
 
         

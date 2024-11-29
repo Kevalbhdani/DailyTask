@@ -35,6 +35,12 @@ function RunningTreatment() {
    const handleSelectGender = (gender) => {
      setSelectedGender(gender);
    };
+ 
+  //  ### one to next ###
+
+  const handleNext = () => {
+    setIsOpen(isOpen + 1);
+  };
 
   const crumbs = [
     { label: "Dashboard", path: "/dashboardmenu" },

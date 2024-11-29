@@ -16,6 +16,7 @@ import PatientsList from './Componet/Pages/patients/PatientsList';
 import PatientDetails from './Componet/Pages/patients/PatientDetails';
 import TreatmentList from './Componet/Pages/patients/TreatmentList';
 import Sidebar from './Componet/Sidebar/Sidebar';
+import Dubble from './Componet/Sidebar/Dubble';
 
 
 
@@ -39,6 +40,8 @@ function App() {
         <Route path="/EmergencyPatient" element={<EmergencyPatient />} />
 
         <Route path="/side" element={<Sidebar />} />
+
+        <Route path="/D" element={<Dubble />} />
       </Routes>
     </>
   );

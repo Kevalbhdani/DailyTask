@@ -7,7 +7,7 @@ function SidebarItem({ label, path, icon, isActive }) {
       <li
         className={`${
           isActive
-            ? "text-white bg-sky  hover:bg-sky hover:text-white"
+            ? "text-white bg-sky hover:text-white"
             : "text-gray-400"
         } flex items-center px-4 py-3 mt-2 rounded-lg hover:bg-whiteSky group   text-gray cursor-pointer`}
       >

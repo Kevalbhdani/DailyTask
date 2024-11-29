@@ -11,13 +11,14 @@ import Linechart from "../../CommonComponet/Linechart";
 
 import { Line } from "react-chartjs-2";
 
-
 function TreatmentList() {
   const [Selectedactive, setSelectedactive] = useState("");
   const [active, setactive] = useState(false);
   const Class = () => {
     setactive(!active);
   };
+
+
   const handleSelectactive = (gender) => {
     setSelectedactive(gender);
   };
@@ -44,28 +45,24 @@ function TreatmentList() {
           </h1>
           <Breadcrumb crumbs={crumbs}></Breadcrumb>
         </div>
-
-        <div className=" lg:grid-cols-12 md:grid-cols-12">
+        <div className=" lg:grid-cols-12 md:grid-cols-12 ">
           <div
-            className={`flex items-center gap-2 my-4 bg-white ${
-              active ? "AddClass" : ""
-            }`}
+            className={`flex items-center gap-2 my-4 bg-white`}
           >
             <div
-              className={`flex items-center cursor-pointer ${
-                Selectedactive === "Calendar" ? "checked-text " : ""
-              }`}
+              className={`flex items-center cursor-pointer ${Selectedactive === "Calendar" ? "checked-text  " : "none"
+                }`}
               onClick={() => handleSelectactive("Calendar")}
             >
               <input
                 type="radio"
                 name="gender"
                 className="hidden"
-                checked={Selectedactive === "Calendar"}
+                checked={Selectedactive === "Calendar" }
                 readOnly
               />
               <label
-                className={`flex items-center py-[12px] px-[15px]  bg-whiteLight Calendar`}
+                className={`flex items-center py-[12px] px-[15px] Calendar`}
                 onClick={Class}
               >
                 <div>
@@ -75,32 +72,30 @@ function TreatmentList() {
             </div>
 
             <div
-              className={`flex items-center cursor-pointer ${
-                Selectedactive === "Statistics" ? "checked-text  " : ""
-              }`}
+              className={`flex items-center cursor-pointer ${Selectedactive === "Statistics" ? "checked-text  " : "none"
+                }`}
               onClick={() => handleSelectactive("Statistics")}
             >
               <input
                 type="radio"
                 name="gender"
                 className="hidden"
-                checked={Selectedactive === "Statistics"}
+                checked={Selectedactive === "Statistics" }
                 readOnly
               />
               <label
-                className={`flex items-center py-[12px] px-[15px]  bg-whiteLight Statistics `}
+                className={`flex items-center py-[12px] px-[15px]  Statistics `}
                 onClick={Class}
               >
                 <div>
-                  <p className="font-nunitoSans font-thin text-lg">
-                    Statistics
-                  </p>
+                  <p className="font-nunitoSans font-thin text-lg">Statistics</p>
                 </div>
               </label>
             </div>
           </div>
           <div className={`tab-contend bg-white p-4  `}>
-            <div className={`show hide`}>
+            <div className={`  ${Selectedactive === "Calendar" ? "show  " : "hide"
+              }`}>
               <FullCalendar
                 plugins={[dayGridPlugin]}
                 initialView="dayGridMonth"
@@ -110,9 +105,9 @@ function TreatmentList() {
                 eventBackgroundColor="#858E9A"
               />
             </div>
-            <div className="show hide">
+            <div className={` ${Selectedactive === "Statistics" ? "show  " : "hide"
+              } `}>
               <Linechart />
-            
             </div>
           </div>
         </div>
