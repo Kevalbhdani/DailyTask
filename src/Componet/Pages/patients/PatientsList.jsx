@@ -79,9 +79,8 @@ function PatientsList() {
               <div className="ms-auto" onClick={handleClick}>
                 <label class="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" class="sr-only peer" value="" />
-                  <div class="group peer bg-gray checked:bg-white  rounded-full duration-300 w-8 h-4 after:duration-300 after:bg-white peer-checked:after:bg-sky peer-checked:ring-sky peer-checked:ring-2 after:rounded-full after:absolute after:h-2.5 after:w-2.5 after:top-[3px] after:right-1 after:flex after:justify-center after:items-center peer-checked:after:-translate-x-4 peer-hover:after:scale-95"></div>
+                  <div class="group peer bg-swithoff peer-checked:bg-white rounded-full duration-300 w-8 h-4 after:duration-300 after:bg-white peer-checked:after:bg-swithon peer-checked:ring-swithon peer-checked:ring-1 after:rounded-full after:absolute after:h-2.5 after:w-2.5 after:top-[3px] after:right-1 after:flex after:justify-center after:items-center peer-checked:after:-translate-x-4 peer-hover:after:scale-95"></div>
                 </label>
-               
               </div>
             </div>
           </div>

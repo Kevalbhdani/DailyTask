@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DashboardView from "../../Dashboard/DashboardView";
 import PatientsList from "../patients/PatientsList";
+import Pagination from "../../CommonComponet/Peginetion"
 import {
   BdayIcon,
   Cancelicon,
@@ -21,7 +22,6 @@ function Patients() {
   const openModal = () => {
     setIsOpen(true);
   };
-
   const closeModal = () => {
     console.log("Closing modal");
     setIsOpen(false);
@@ -33,6 +33,19 @@ function Patients() {
        setSelectedGender(gender);
      };
 
+    //  ###  paginetion  ###
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10; // Total number of pages (replace with your logic)
+  const data = Array.from({ length: 100 }, (_, index) => `Item ${index + 1}`);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentData = data.slice(indexOfFirstItem, indexOfLastItem);
+
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
   
   const crumbs = [
     { label: "Dashboard", path: "/dashboardmenu" },
@@ -280,12 +293,30 @@ function Patients() {
                   </div>
                 </div>
               </div>
-            )}
+            )}  
           </div>
+
         </div>
       </div>
 
       <PatientsList></PatientsList>
+      <div className="p-4">
+        <h1 className="text-xl mb-4">Paginated Data</h1>
+
+        {/* Display the current data */}
+        <ul className="list-disc pl-6">
+          {currentData.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+
+        {/* Pagination Component */}
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+      </div>
     </DashboardView>
   );
 }

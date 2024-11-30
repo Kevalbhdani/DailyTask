@@ -32,8 +32,10 @@ module.exports = {
         tabcolor: "#ECF4FF",
         tabboder: "#d9d9d9",
         tabboder2: "#DDDDDD",
-        graybtn:"#f0f1f2",
-        btngray:"#D1D4D9",
+        graybtn: "#f0f1f2",
+        btngray: "#D1D4D9",
+        swithoff: "#A5A5A5",
+        swithon:"#86b7fe",
       },
       fontSize: {
         sm: ["14px", "20px"],

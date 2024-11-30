@@ -357,7 +357,6 @@ function InspectionRequest() {
                     </div>
                   </div>
                 )}
-
                 {currentStep === 2 && (
                   <div className="fixed  inset-0 right-0 top-0  flex justify-end  bg-black bg-opacity-50 z-[999]  ">
                     <div
