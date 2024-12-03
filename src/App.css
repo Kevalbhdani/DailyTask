@@ -165,15 +165,6 @@ aside.AddClass {
   /* background-color: blueviolet; */
 }
 
-.fc-view-harness {
-  /* border-radius: 20px!important; */
-  /* background-color: aqua; */
-}
-
-.fc-dayGridMonth-view {
-  /* border-radius: 20px!important; */
-}
-
 .fc-theme-standard .fc-scrollgrid {
   /* border: 1px outset #d9d9d9; */
   border-radius: 9px;
@@ -250,10 +241,6 @@ table tr:last-child th:last-child {
 .fc-day-other .fc-daygrid-day-number {
   color: #858e9a;
 }
-
-/* .fc-event b{
-  display: none!important;
-} */
 .hide {
   display: none;
 }
@@ -275,6 +262,21 @@ table tr:last-child th:last-child {
 }
 
 /* ###  offcanvas #### */
+.offcanvas {
+  @apply bg-white rounded-l-3xl  shadow-lg w-[450px] fixed overflow-auto xl:overflow-y-hidden z-[999] transition duration-300;
+}
+
+.offcanvas-header {
+  @apply lg:p-6 md:p-4 sm:p-3 p-3 justify-between flex items-center sticky top-0 right-0 z-10 bg-white;
+}
+.offcanvas-body {
+  @apply h-full lg:p-5 md:p-4 sm:p-3 p-3 mb-5 text-start flex flex-col content-between;
+}
+
+.offcanvas-footer {
+  @apply pb-4 px-3 lg:px-5 md:px-4 sm:px-3 right-0 bottom-0 sticky bg-white;
+}
+
 .offcanvas-backdrop-show {
   position: fixed;
   top: 0;
@@ -282,21 +284,27 @@ table tr:last-child th:last-child {
   z-index: 997;
   width: 100%;
   height: 100%;
- background-color: rgb(0, 0, 0, 0.3) !important;
-}
-.remove {
-  display: none;
+  background-color: rgb(0, 0, 0, 0.4) !important;
 }
 
 .offcanvasshow {
-  width: -450px !important;
   position: fixed;
   inset: 0;
   right: 0;
   top: 0;
-  display: flex;
-  justify-content: end;
   z-index: 999;
+}
+
+.offcanvas-end {
+  @apply top-0 right-0 translate-x-full;
+}
+
+.offcanvas-start {
+  @apply top-0 left-0 translate-x-full;
+}
+
+.offcanvas.show {
+  @apply transform-none;
 }
 
 .offcanvasshow .offcanvasremove {
